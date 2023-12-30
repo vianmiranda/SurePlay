@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -19,40 +20,32 @@ type api_params struct {
 }
 
 func main() {
-	API_KEY := fetch_key(3)
+	API_KEY, err := fetch_key("api_key.txt", 3)
+	if err != nil {
+		panic(err)
+	}
+
 	settings := api_params{API_KEY, "basketball_nba", "h2h", "us", "american"}
 	URL := url_builder(settings)
 
-	resp, err := http.Get(URL)
+	odds_data, err := get_json(URL)
 	if err != nil {
-		fmt.Print(err.Error())
+		panic(err)
 	}
 
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		fmt.Print(err.Error())
-	}
-
-	fmt.Println(resp.Header)
-	// fmt.Println(string(body))
-
-	var data []Game
-	json.Unmarshal(body, &data)
-
-	fmt.Println(data[0])
-
+	fmt.Println(odds_data)
 }
 
-func fetch_key(line int8) string {
+func fetch_key(file_name string, line int8) (string, error) {
 	wd, err := os.Getwd()
 	if err != nil {
 		panic(err)
 	}
 
-	file := wd + "\\" + "api_key.txt"
+	file := wd + "\\" + file_name
 	f, err := os.Open(file)
 	if err != nil {
-		panic(err)
+		return "", err
 	}
 	defer f.Close()
 
@@ -62,11 +55,18 @@ func fetch_key(line int8) string {
 	for scanner.Scan() {
 		if index == line {
 			api_key = scanner.Text()
+			break
 		}
 		index++
 	}
 
-	return api_key
+	err = nil
+	if index < line {
+		err = errors.New("index out of bounds: line number provided is greater than number of lines in file provided")
+		return "", err
+	}
+
+	return api_key, err
 }
 
 func url_builder(settings api_params) string {
@@ -87,6 +87,36 @@ func url_builder(settings api_params) string {
 	// information.WriteString(settings.API_KEY)
 
 	return sportodds.String() //, information.String()
+}
+
+func get_json(URL string) ([]Game, error) {
+	var data []Game
+	var err error
+
+	resp, err := http.Get(URL)
+	if err != nil {
+		return data, err
+	}
+
+	var status_code int = resp.StatusCode
+	fmt.Printf("Status code: [%d]\n", status_code)
+	fmt.Println(resp.Header)
+	fmt.Println()
+	if status_code != 200 {
+		err = errors.New(fmt.Sprintf("Status code not 200! Got %d instead.", status_code))
+		return data, err
+	}
+
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return data, err
+	}
+
+	// fmt.Println(string(body))
+
+	json.Unmarshal(body, &data)
+
+	return data, err
 }
 
 func UNUSED(x ...interface{}) {} // for testing purposes
