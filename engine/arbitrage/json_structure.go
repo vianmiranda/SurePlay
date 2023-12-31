@@ -1,4 +1,4 @@
-package main
+package arbitrage
 
 type Game struct {
 	Sport      string      `json:"sport_key"`

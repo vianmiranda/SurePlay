@@ -11,7 +11,7 @@ type Probabilities struct {
 	Implied_Odds  float32
 }
 
-func Convert(american_odds int32) Probabilities {
+func Convert_Odds(american_odds int32) Probabilities {
 	var decimal_odds float64 = american_to_decimal(american_odds)
 	var implied_odds float32 = decimal_to_implied(decimal_odds)
 

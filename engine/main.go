@@ -3,11 +3,13 @@ package main
 import (
 	"bufio"
 	"encoding/json"
+	"engine/arbitrage"
 	"errors"
 	"fmt"
 	"io"
 	"net/http"
 	"os"
+	"path/filepath"
 	"strings"
 )
 
@@ -33,9 +35,14 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println(odds_data)
+	// fmt.Println(odds_data)
 
-	//arbitrage.Arbitrage_Detection()
+	for index, game := range odds_data {
+		fmt.Printf("Game #%d %s @ %s at %s\n", index, game.Away_Team, game.Home_Team, game.Start_Time)
+		arbopps := arbitrage.Arbitrage_Detection(game)
+		fmt.Println(arbopps)
+		fmt.Println()
+	}
 }
 
 func fetch_key(file_name string, line int8) (string, error) {
@@ -44,7 +51,8 @@ func fetch_key(file_name string, line int8) (string, error) {
 		panic(err)
 	}
 
-	file := wd + "\\" + file_name
+	parent := filepath.Dir(wd)
+	file := parent + "\\" + file_name
 	f, err := os.Open(file)
 	if err != nil {
 		return "", err
@@ -91,8 +99,8 @@ func url_builder(settings api_params) string {
 	return sportodds.String() //, information.String()
 }
 
-func get_json(URL string) ([]Game, error) {
-	var data []Game
+func get_json(URL string) ([]arbitrage.Game, error) {
+	var data []arbitrage.Game
 	var err error
 
 	resp, err := http.Get(URL)
