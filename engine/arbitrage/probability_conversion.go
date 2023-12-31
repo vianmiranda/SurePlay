@@ -1,9 +1,9 @@
 package arbitrage
 
 type Probabilities struct {
-	american_odds int32
-	decimal_odds  float64
-	implied_odds  float32
+	American_Odds int32
+	Decimal_Odds  float64
+	Implied_Odds  float32
 }
 
 func Convert(american_odds int32) Probabilities {
