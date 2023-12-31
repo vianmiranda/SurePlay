@@ -1,5 +1,10 @@
 package arbitrage
 
+type Book_Odds struct {
+	Probabilities
+	Bookmaker string
+}
+
 type Probabilities struct {
 	American_Odds int32
 	Decimal_Odds  float64

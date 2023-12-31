@@ -34,6 +34,8 @@ func main() {
 	}
 
 	fmt.Println(odds_data)
+
+	//arbitrage.Arbitrage_Detection()
 }
 
 func fetch_key(file_name string, line int8) (string, error) {
