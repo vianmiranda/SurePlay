@@ -1,6 +1,7 @@
-package arbitrage
+package json
 
 type Game struct {
+	ID         string      `json:"id"`
 	Sport      string      `json:"sport_key"`
 	Start_Time string      `json:"commence_time"`
 	Home_Team  string      `json:"home_team"`

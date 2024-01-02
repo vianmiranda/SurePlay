@@ -1,11 +1,14 @@
 package arbitrage
 
-import "container/heap"
+import (
+	"container/heap"
+	"engine/json"
+)
 
-func Arbitrage_Detection(game Game) map[Book_Odds][]Book_Odds {
+func Arbitrage_Detection(game json.Game) map[Book_Odds][]Book_Odds {
 	var t1pq, t2pq MinHeap
 	for _, bookmaker := range game.Bookmakers {
-		var outcomes []Outcome = bookmaker.Markets[0].Outcomes
+		var outcomes []json.Outcome = bookmaker.Markets[0].Outcomes
 		team1, team2 := outcomes[0], outcomes[1]
 		prob1, prob2 := Convert_Odds(team1.Odds), Convert_Odds(team2.Odds)
 		t1_bookodds, t2_bookodds := Book_Odds{prob1, bookmaker.Bookmaker}, Book_Odds{prob2, bookmaker.Bookmaker}
