@@ -1,4 +1,4 @@
-package json
+package oddsdata
 
 type Game struct {
 	ID         string      `json:"id"`

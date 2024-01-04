@@ -2,13 +2,13 @@ package main
 
 import (
 	"engine/arbitrage"
-	"engine/json"
+	"engine/oddsdata"
 	"fmt"
 )
 
 func main() {
-	api_inputs := json.Input{API_FILE: "api_key.txt", LINE_NUMBER: 1, SPORT: "basketball_nba", MARKETS: "h2h", REGIONS: "us", ODDS_FORMAT: "american"}
-	odds_data, err := json.Fetch_Odds(api_inputs)
+	api_inputs := oddsdata.Input{API_FILE: "api_key.txt", LINE_NUMBER: 1, SPORT: "basketball_nba", MARKETS: "h2h", REGIONS: "us", ODDS_FORMAT: "american"}
+	odds_data, err := oddsdata.Fetch_Odds(api_inputs)
 	if err != nil {
 		panic(err)
 	}

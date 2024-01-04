@@ -2,13 +2,14 @@ package arbitrage
 
 import (
 	"container/heap"
-	"engine/json"
+	"engine/oddsdata"
 )
 
-func Arbitrage_Detection(game json.Game) map[Book_Odds][]Book_Odds {
+func Arbitrage_Detection(game oddsdata.Game) map[Book_Odds][]Book_Odds {
+	// Uses Priority Queue to find all arbitrage opportunities
 	var t1pq, t2pq MinHeap
 	for _, bookmaker := range game.Bookmakers {
-		var outcomes []json.Outcome = bookmaker.Markets[0].Outcomes
+		var outcomes []oddsdata.Outcome = bookmaker.Markets[0].Outcomes
 		team1, team2 := outcomes[0], outcomes[1]
 		prob1, prob2 := Convert_Odds(team1.Odds), Convert_Odds(team2.Odds)
 		t1_bookodds, t2_bookodds := Book_Odds{prob1, bookmaker.Bookmaker}, Book_Odds{prob2, bookmaker.Bookmaker}
@@ -19,6 +20,7 @@ func Arbitrage_Detection(game json.Game) map[Book_Odds][]Book_Odds {
 	heap.Init(&t1pq)
 	heap.Init(&t2pq)
 
+	// Takes minimum odds from t1pq and finds all odds from t2pq that sum less than 100
 	var arbitrage_opps map[Book_Odds][]Book_Odds = make(map[Book_Odds][]Book_Odds)
 	for len(t2pq) > 0 {
 		t1_bookodd := *heap.Pop(&t1pq).(*Book_Odds)

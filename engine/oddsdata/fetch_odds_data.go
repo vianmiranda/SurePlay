@@ -1,4 +1,4 @@
-package json
+package oddsdata
 
 import (
 	"bufio"
