@@ -29,7 +29,7 @@ type api_params struct {
 	ODDS_FORMAT string
 }
 
-func Fetch_Api(in Input) ([]Game, error) {
+func Fetch_Odds(in Input) ([]Game, error) {
 	var odds_data []Game
 	API_KEY, err := fetch_key(in.API_FILE, in.LINE_NUMBER)
 	if err != nil {
