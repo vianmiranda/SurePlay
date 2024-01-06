@@ -12,7 +12,7 @@ func Arbitrage_Detection(game oddsdata.Game) map[Book_Odds][]Book_Odds {
 		var outcomes []oddsdata.Outcome = bookmaker.Markets[0].Outcomes
 		team1, team2 := outcomes[0], outcomes[1]
 		prob1, prob2 := Convert_Odds(team1.Odds), Convert_Odds(team2.Odds)
-		t1_bookodds, t2_bookodds := Book_Odds{prob1, bookmaker.Bookmaker}, Book_Odds{prob2, bookmaker.Bookmaker}
+		t1_bookodds, t2_bookodds := Book_Odds{bookmaker.Bookmaker, prob1}, Book_Odds{bookmaker.Bookmaker, prob2}
 		t1pq = append(t1pq, &t1_bookodds)
 		t2pq = append(t2pq, &t2_bookodds)
 	}

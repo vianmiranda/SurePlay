@@ -1,14 +1,14 @@
 package arbitrage
 
 type Book_Odds struct {
-	Probabilities
-	Bookmaker string
+	Bookmaker     string `json:"bookmaker"`
+	Probabilities `json:"probabilities"`
 }
 
 type Probabilities struct {
-	American_Odds int32
-	Decimal_Odds  float64
-	Implied_Odds  float32
+	American_Odds int32   `json:"american_odds"`
+	Decimal_Odds  float64 `json:"decimal_odds"`
+	Implied_Odds  float32 `json:"implied_odds"`
 }
 
 func Convert_Odds(american_odds int32) Probabilities {

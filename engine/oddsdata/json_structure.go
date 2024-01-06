@@ -1,5 +1,7 @@
 package oddsdata
 
+type Response []Game
+
 type Game struct {
 	ID         string      `json:"id"`
 	Sport      string      `json:"sport_key"`

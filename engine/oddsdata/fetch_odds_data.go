@@ -29,8 +29,8 @@ type api_params struct {
 	ODDS_FORMAT string
 }
 
-func Fetch_Odds(in Input) ([]Game, error) {
-	var odds_data []Game
+func Fetch_Odds(in Input) (Response, error) {
+	var odds_data Response
 	API_KEY, err := fetch_key(in.API_FILE, in.LINE_NUMBER)
 	if err != nil {
 		return odds_data, err
@@ -103,8 +103,8 @@ func url_builder(settings api_params) string {
 	return sportodds.String() //, information.String()
 }
 
-func get_json(URL string) ([]Game, error) {
-	var data []Game
+func get_json(URL string) (Response, error) {
+	var data Response
 	var err error
 
 	resp, err := http.Get(URL)
