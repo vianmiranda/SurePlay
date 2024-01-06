@@ -34,4 +34,39 @@ func main() {
 	http.ListenAndServe(port, r)
 }
 
+// // concurrent implementation
+// func main() {
+// 	var sport_keys []string = []string{"americanfootball_ncaaf", "americanfootball_nfl", "baseball_mlb", "basketball_nba", "icehockey_nhl", "mma_mixed_martial_arts"}
+// 	var wg sync.WaitGroup
+// 	dict := make(map[string][]map[arbitrage.Book_Odds][]arbitrage.Book_Odds)
+
+// 	for _, sport := range sport_keys {
+// 		wg.Add(1)
+// 		go getResponse(&wg, sport, dict)
+// 	}
+
+// 	wg.Wait()
+
+// 	for _, sport := range sport_keys {
+// 		fmt.Printf("Printing arbitrage for %s\n", sport)
+// 		fmt.Println(dict[sport])
+// 		fmt.Println()
+// 	}
+// }
+
+// func getResponse(wg *sync.WaitGroup, sport_key string, dict map[string][]map[arbitrage.Book_Odds][]arbitrage.Book_Odds) {
+// 	defer wg.Done()
+// 	api_inputs := oddsdata.Input{API_FILE: "api_key.txt", LINE_NUMBER: 1, SPORT: sport_key, MARKETS: "h2h", REGIONS: "us", ODDS_FORMAT: "american"}
+// 	odds_data, err := oddsdata.Fetch_Odds(api_inputs)
+// 	if err != nil {
+// 		panic(err)
+// 	}
+
+// 	var arbopps []map[arbitrage.Book_Odds][]arbitrage.Book_Odds
+// 	for _, game := range odds_data {
+// 		arbopps = append(arbopps, arbitrage.Arbitrage_Detection(game))
+// 	}
+// 	dict[sport_key] = arbopps
+// }
+
 func UNUSED(x ...interface{}) {} // for testing purposes
