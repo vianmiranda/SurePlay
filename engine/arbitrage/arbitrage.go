@@ -5,23 +5,6 @@ import (
 	"engine/oddsdata"
 )
 
-type SportOpps struct {
-	Sport string     `json:"sport"`
-	Games []GameOpps `json:"games"`
-}
-
-type GameOpps struct {
-	Home_Team  string   `json:"home_team"`
-	Away_Team  string   `json:"away_team"`
-	Start_Time string   `json:"start_time"`
-	ArbOpps    []ArbOpp `json:"arbitrage_opportunities"`
-}
-
-type ArbOpp struct {
-	Key   Book_Odds   `json:"key"`
-	Value []Book_Odds `json:"value"`
-}
-
 type bookmaker_ArbOpp map[Book_Odds][]Book_Odds
 
 func Arbitrage_Detection(allGames oddsdata.Response, sport string) SportOpps {
