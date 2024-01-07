@@ -6,67 +6,65 @@ import (
 	"engine/oddsdata"
 	"fmt"
 	"net/http"
+	"sync"
 
 	"github.com/go-chi/chi"
 )
 
+// concurrent implementation
+const port string = ":3000"
+
+var sport_keys []string = []string{"americanfootball_ncaaf", "americanfootball_nfl", "baseball_mlb", "basketball_nba", "icehockey_nhl", "mma_mixed_martial_arts"}
+
+var api_inputs oddsdata.Input = oddsdata.Input{
+	API_FILE:    "api_key.txt",
+	LINE_NUMBER: 1,
+	MARKETS:     "h2h",
+	REGIONS:     "us",
+	ODDS_FORMAT: "american"}
+
 func main() {
-	const port = ":3000"
-	api_inputs := oddsdata.Input{API_FILE: "api_key.txt", LINE_NUMBER: 1, SPORT: "basketball_nba", MARKETS: "h2h", REGIONS: "us", ODDS_FORMAT: "american"}
-	odds_data, err := oddsdata.Fetch_Odds(api_inputs)
-	if err != nil {
-		panic(err)
+	var wg sync.WaitGroup
+	allSportArbitrageOpportunities := make(map[string]arbitrage.SportOpps)
+
+	for _, sport := range sport_keys {
+		wg.Add(1)
+		inputs := api_inputs
+		inputs.SPORT = sport
+		go getResponse(&wg, inputs, allSportArbitrageOpportunities)
 	}
 
-	var arbopps []map[arbitrage.Book_Odds][]arbitrage.Book_Odds
-	for index, game := range odds_data {
-		fmt.Printf("Game #%d %s @ %s at %s\n", index, game.Away_Team, game.Home_Team, game.Start_Time)
-		arbopps = append(arbopps, arbitrage.Arbitrage_Detection(game))
-		fmt.Println(arbopps[index])
-		fmt.Println()
+	wg.Wait()
+
+	for sport, arbOpps := range allSportArbitrageOpportunities {
+		fmt.Printf("\nPrinting arbitrage for %s\n", sport)
+		for index, game := range arbOpps.Games {
+			fmt.Printf("\tGame #%d %s @ %s at %s\n", index, game.Away_Team, game.Home_Team, game.Start_Time)
+			for _, arbOpp := range game.ArbOpps {
+				fmt.Printf("\t\tKey: %v \t Value: %v\n", arbOpp.Key, arbOpp.Value)
+			}
+			fmt.Println()
+		}
 	}
 
 	r := chi.NewRouter()
 
-	r.Get("/odds", handler.ArbOppsGet(arbopps))
+	r.Get("/odds", handler.ArbOppsGet(allSportArbitrageOpportunities))
 
-	fmt.Printf("Serving on %s ", port)
+	fmt.Printf("\n\nServing on %s \n\n", port)
 	http.ListenAndServe(port, r)
 }
 
-// // concurrent implementation
-// func main() {
-// 	var sport_keys []string = []string{"americanfootball_ncaaf", "americanfootball_nfl", "baseball_mlb", "basketball_nba", "icehockey_nhl", "mma_mixed_martial_arts"}
-// 	var wg sync.WaitGroup
-// 	dict := make(map[string][]map[arbitrage.Book_Odds][]arbitrage.Book_Odds)
+func getResponse(wg *sync.WaitGroup, in oddsdata.Input, dict map[string]arbitrage.SportOpps) {
+	defer wg.Done()
+	odds_data, err := oddsdata.Fetch_Odds(in)
+	if err != nil {
+		panic(err)
+	}
 
-// 	for _, sport := range sport_keys {
-// 		wg.Add(1)
-// 		go getResponse(&wg, sport, dict)
-// 	}
+	var arbOpps arbitrage.SportOpps = arbitrage.Arbitrage_Detection(odds_data, in.SPORT)
 
-// 	wg.Wait()
-
-// 	for _, sport := range sport_keys {
-// 		fmt.Printf("Printing arbitrage for %s\n", sport)
-// 		fmt.Println(dict[sport])
-// 		fmt.Println()
-// 	}
-// }
-
-// func getResponse(wg *sync.WaitGroup, sport_key string, dict map[string][]map[arbitrage.Book_Odds][]arbitrage.Book_Odds) {
-// 	defer wg.Done()
-// 	api_inputs := oddsdata.Input{API_FILE: "api_key.txt", LINE_NUMBER: 1, SPORT: sport_key, MARKETS: "h2h", REGIONS: "us", ODDS_FORMAT: "american"}
-// 	odds_data, err := oddsdata.Fetch_Odds(api_inputs)
-// 	if err != nil {
-// 		panic(err)
-// 	}
-
-// 	var arbopps []map[arbitrage.Book_Odds][]arbitrage.Book_Odds
-// 	for _, game := range odds_data {
-// 		arbopps = append(arbopps, arbitrage.Arbitrage_Detection(game))
-// 	}
-// 	dict[sport_key] = arbopps
-// }
+	dict[in.SPORT] = arbOpps
+}
 
 func UNUSED(x ...interface{}) {} // for testing purposes

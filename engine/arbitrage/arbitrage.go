@@ -5,7 +5,41 @@ import (
 	"engine/oddsdata"
 )
 
-func Arbitrage_Detection(game oddsdata.Game) map[Book_Odds][]Book_Odds {
+type SportOpps struct {
+	Sport string     `json:"sport"`
+	Games []GameOpps `json:"games"`
+}
+
+type GameOpps struct {
+	Home_Team  string   `json:"home_team"`
+	Away_Team  string   `json:"away_team"`
+	Start_Time string   `json:"start_time"`
+	ArbOpps    []ArbOpp `json:"arbitrage_opportunities"`
+}
+
+type ArbOpp struct {
+	Key   Book_Odds   `json:"key"`
+	Value []Book_Odds `json:"value"`
+}
+
+type bookmaker_ArbOpp map[Book_Odds][]Book_Odds
+
+func Arbitrage_Detection(allGames oddsdata.Response, sport string) SportOpps {
+	gameOpps := []GameOpps{}
+	for _, game := range allGames {
+		result := []ArbOpp{}
+		opp := game_arbitrages(game)
+		for key, value := range opp {
+			result = append(result, ArbOpp{key, value})
+		}
+		gameOpps = append(gameOpps, GameOpps{game.Home_Team, game.Away_Team, game.Start_Time, result})
+	}
+	sportOpps := SportOpps{sport, gameOpps}
+
+	return sportOpps
+}
+
+func game_arbitrages(game oddsdata.Game) bookmaker_ArbOpp {
 	// Uses Priority Queue to find all arbitrage opportunities
 	var t1pq, t2pq MinHeap
 	for _, bookmaker := range game.Bookmakers {
@@ -21,7 +55,7 @@ func Arbitrage_Detection(game oddsdata.Game) map[Book_Odds][]Book_Odds {
 	heap.Init(&t2pq)
 
 	// Takes minimum odds from t1pq and finds all odds from t2pq that sum less than 100
-	var arbitrage_opps map[Book_Odds][]Book_Odds = make(map[Book_Odds][]Book_Odds)
+	var arbitrage_opps bookmaker_ArbOpp = make(bookmaker_ArbOpp)
 	for len(t2pq) > 0 {
 		t1_bookodd := *heap.Pop(&t1pq).(*Book_Odds)
 		var temp_splice []Book_Odds
@@ -39,24 +73,4 @@ func Arbitrage_Detection(game oddsdata.Game) map[Book_Odds][]Book_Odds {
 	}
 
 	return arbitrage_opps
-
-	/*
-		var book1 Book_Odds = Book_Odds{Probabilities{20, 0.2, 50.4}, "Book1"}
-		var book2 Book_Odds = Book_Odds{Probabilities{20, 0.2, 42.1}, "Book2"}
-		var book3 Book_Odds = Book_Odds{Probabilities{20, 0.2, 69.7}, "Book3"}
-		var book4 Book_Odds = Book_Odds{Probabilities{20, 0.2, 98.2}, "Book4"}
-		var book5 Book_Odds = Book_Odds{Probabilities{20, 0.2, 12.3}, "Book5"}
-		var book6 Book_Odds = Book_Odds{Probabilities{20, 0.2, 2.2}, "Book6"}
-		var book7 Book_Odds = Book_Odds{Probabilities{20, 0.2, 79.8}, "Book7"}
-
-		var books = MinHeap{&book1, &book2, &book3, &book4, &book5, &book6, &book7}
-		heap.Init(&books)
-
-		var book8 Book_Odds = Book_Odds{Probabilities{20, 0.3, 1.1}, "Book8"}
-		heap.Push(&books, &book8)
-		for books.Len() > 0 {
-			item := *heap.Pop(&books).(*Book_Odds)
-			fmt.Printf("%+v", item)
-		}
-	*/
 }
