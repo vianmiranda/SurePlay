@@ -45,14 +45,23 @@ function Arbitrage() {
     return (
         <div>
             <h1>Data Fetching</h1>
-            <ul>
-                {data.map((datum) => {
-                    return <div><li> {datum.sport} </li> 
+            <ul>{data.map((datum) => {
+                return <div>
+                    <li>{datum.sport}</li> 
                     <ul>{datum.games.map((game) => {
-                        return <li>{game.away_team} @ {game.home_team}</li>
-                    })}</ul></div>
-                })}
-            </ul>
+                        return <div>
+                            <li>{game.away_team} @ {game.home_team} at {game.start_time}</li>
+                            <ul>{game.arbitrage_opportunities.map((opportunity) => {
+                                return <div>
+                                    {opportunity.value.map((value) => {
+                                        return <li>{opportunity.key.bookmaker} {opportunity.key.probabilities.american_odds} @ {value.bookmaker} {value.probabilities.american_odds}</li>
+                                    })}
+                                </div>
+                            })}</ul>
+                        </div>
+                    })}</ul>
+                </div>
+            })}</ul>
         </div>
     );
 }
