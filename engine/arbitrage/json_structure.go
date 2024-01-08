@@ -27,3 +27,9 @@ type Probabilities struct {
 	Decimal_Odds  float64 `json:"decimal_odds"`
 	Implied_Odds  float32 `json:"implied_odds"`
 }
+
+type BetValues struct {
+	Value1 float64 `json:"value1"`
+	Value2 float64 `json:"value2"`
+	Budget float64 `json:"budget"`
+}

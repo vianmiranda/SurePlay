@@ -50,6 +50,7 @@ func main() {
 	r := chi.NewRouter()
 
 	r.Get("/odds", handler.ArbOppsGet(allSportArbitrageOpportunities))
+	r.Post("/calc/{valueType}/{odds1}&{odds2}&{value}", handler.BetCalcPost())
 
 	fmt.Printf("\n\nServing on %s \n\n", port)
 	http.ListenAndServe(port, r)
