@@ -117,7 +117,7 @@ func get_json(URL string) (Response, error) {
 	fmt.Println(resp.Header)
 	fmt.Println()
 	if status_code != 200 {
-		err = errors.New(fmt.Sprintf("Status code not 200! Got %d instead.", status_code))
+		err = errors.New(fmt.Sprintf("odds-api: Status code not 200! Got %d instead.", status_code))
 		return data, err
 	}
 

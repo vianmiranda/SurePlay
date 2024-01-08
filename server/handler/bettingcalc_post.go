@@ -33,17 +33,28 @@ func BetCalcPost() http.HandlerFunc {
 
 		var ret arbitrage.BetValues = arbitrage.BetValues{}
 
-		if valueType == "budget" {
+		switch {
+		case valueType == "budget":
 			ret.Value1, ret.Value2 = arbitrage.Split_Budget(odds1, odds2, value)
-			ret.Budget = float64(value)
-		} else if valueType == "betAmount" {
-			ret.Value1 = float64(value)
-			ret.Value2 = float64(arbitrage.Ensure_Profit(odds1, odds2, value))
+			ret.Budget = value
+		case valueType == "betAmountO1":
+			ret.Value1 = value
+			ret.Value2 = arbitrage.Ensure_Profit(odds1, odds2, value)
 			ret.Budget = ret.Value1 + ret.Value2
-		} else {
+		case valueType == "betAmountO2":
+			ret.Value2 = value
+			ret.Value1 = arbitrage.Ensure_Profit(odds2, odds1, value)
+			ret.Budget = ret.Value1 + ret.Value2
+		// case valueType == "multiAmountO1O2": // TODO: Implement this for multiple input values
+		// 	ret.Value1 = value
+		// 	ret.Value2 = value2
+		// 	ret.Budget = ret.Value1 + ret.Value2
+		default:
 			http.Error(w, "valueType must be either 'budget' or 'betAmount'", http.StatusInternalServerError)
 			return
 		}
+
+		ret.Profit1, ret.Profit2 = arbitrage.Calculate_Profit(odds1, odds2, ret.Value1, ret.Value2)
 
 		responseJSON, err := json.Marshal(ret)
 		if err != nil {

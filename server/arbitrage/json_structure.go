@@ -32,7 +32,9 @@ type Probabilities struct {
 }
 
 type BetValues struct {
-	Value1 float64 `json:"value1"`
-	Value2 float64 `json:"value2"`
-	Budget float64 `json:"budget"`
+	Value1  float32 `json:"value1"`
+	Value2  float32 `json:"value2"`
+	Budget  float32 `json:"budget"`
+	Profit1 float32 `json:"profit1"`
+	Profit2 float32 `json:"profit2"`
 }

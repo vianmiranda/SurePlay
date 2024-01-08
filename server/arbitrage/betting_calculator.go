@@ -10,7 +10,7 @@ func Ensure_Profit(odds1 float32, odds2 float32, amt float32) float32 {
 }
 
 // given a total budget the user wants to bet, returns the ideal way to split up the bet
-func Split_Budget(odds1 float32, odds2 float32, budget float32) (float64, float64) {
+func Split_Budget(odds1 float32, odds2 float32, budget float32) (float32, float32) {
 
 	A := mat.NewDense(2, 2, []float64{1, 1, float64(odds1), float64(-odds2)})
 	b := mat.NewVecDense(2, []float64{float64(budget), 0})
@@ -22,5 +22,9 @@ func Split_Budget(odds1 float32, odds2 float32, budget float32) (float64, float6
 		return 0, 0
 	}
 
-	return x.At(0, 0), x.At(1, 0)
+	return float32(x.At(0, 0)), float32(x.At(1, 0))
+}
+
+func Calculate_Profit(odds1 float32, odds2 float32, amt1 float32, amt2 float32) (float32, float32) {
+	return (odds1 * amt1) - (amt1 + amt2), (odds2 * amt2) - (amt1 + amt2)
 }
