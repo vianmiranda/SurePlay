@@ -24,6 +24,16 @@ var api_inputs oddsdata.Input = oddsdata.Input{
 	ODDS_FORMAT: "american"}
 
 func main() {
+	r := chi.NewRouter()
+
+	r.Get("/odds", handler.ArbOppsGet(findArbitrage(r, true)))
+	r.Post("/calc/{valueType}/{odds1}&{odds2}&{value}", handler.BetCalcPost())
+
+	fmt.Printf("\n\nServing on %s \n\n", port)
+	http.ListenAndServe(port, r)
+}
+
+func findArbitrage(r *chi.Mux, print bool) map[string]arbitrage.SportOpps {
 	var wg sync.WaitGroup
 	allSportArbitrageOpportunities := make(map[string]arbitrage.SportOpps)
 
@@ -36,24 +46,20 @@ func main() {
 
 	wg.Wait()
 
-	for sport, arbOpps := range allSportArbitrageOpportunities {
-		fmt.Printf("\nPrinting arbitrage for %s\n", sport)
-		for index, game := range arbOpps.Games {
-			fmt.Printf("\tGame #%d %s @ %s at %s\n", index, game.Away_Team, game.Home_Team, game.Start_Time)
-			for _, arbOpp := range game.ArbOpps {
-				fmt.Printf("\t\tKey: %v \t Value: %v\n", arbOpp.Key, arbOpp.Value)
+	if print {
+		for sport, arbOpps := range allSportArbitrageOpportunities {
+			fmt.Printf("\nPrinting arbitrage for %s\n", sport)
+			for index, game := range arbOpps.Games {
+				fmt.Printf("\tGame #%d %s @ %s at %s\n", index, game.Away_Team, game.Home_Team, game.Start_Time)
+				for _, arbOpp := range game.ArbOpps {
+					fmt.Printf("\t\tKey: %v \t Value: %v\n", arbOpp.Key, arbOpp.Value)
+				}
+				fmt.Println()
 			}
-			fmt.Println()
 		}
 	}
 
-	r := chi.NewRouter()
-
-	r.Get("/odds", handler.ArbOppsGet(allSportArbitrageOpportunities))
-	r.Post("/calc/{valueType}/{odds1}&{odds2}&{value}", handler.BetCalcPost())
-
-	fmt.Printf("\n\nServing on %s \n\n", port)
-	http.ListenAndServe(port, r)
+	return allSportArbitrageOpportunities
 }
 
 func getResponse(wg *sync.WaitGroup, in oddsdata.Input, dict map[string]arbitrage.SportOpps) {
