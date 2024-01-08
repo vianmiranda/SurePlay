@@ -45,6 +45,13 @@ function Arbitrage() {
     return (
         <div>
             <h1>Data Fetching</h1>
+            <p>Percent</p>
+            <p>Time</p>
+            <p>Event</p>
+            <p>Market</p>
+            <p>Bets</p>
+            <p>Books</p>
+
             <ul>{data.map((datum) => {
                 return <div>
                     <li>{datum.sport}</li> 

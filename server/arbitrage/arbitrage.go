@@ -29,7 +29,7 @@ func game_arbitrages(game oddsdata.Game) bookmaker_ArbOpp {
 		var outcomes []oddsdata.Outcome = bookmaker.Markets[0].Outcomes
 		team1, team2 := outcomes[0], outcomes[1]
 		prob1, prob2 := Convert_Odds(team1.Odds), Convert_Odds(team2.Odds)
-		t1_bookodds, t2_bookodds := Book_Odds{bookmaker.Bookmaker, prob1}, Book_Odds{bookmaker.Bookmaker, prob2}
+		t1_bookodds, t2_bookodds := Book_Odds{bookmaker.Bookmaker, team1.Name, prob1}, Book_Odds{bookmaker.Bookmaker, team2.Name, prob2}
 		t1pq = append(t1pq, &t1_bookodds)
 		t2pq = append(t2pq, &t2_bookodds)
 	}

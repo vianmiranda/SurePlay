@@ -13,12 +13,15 @@ type GameOpps struct {
 }
 
 type ArbOpp struct {
+	//Market string      `json:"market"` // TODO: Add market to JSON and implement in rest of backend
+	//Percent_Profit float32     `json:"percent_profit"` // TODO: Add percent_profit to JSON and implement in rest of backend
 	Key   Book_Odds   `json:"key"`
 	Value []Book_Odds `json:"value"`
 }
 
 type Book_Odds struct {
 	Bookmaker     string `json:"bookmaker"`
+	Name          string `json:"name"`
 	Probabilities `json:"probabilities"`
 }
 
