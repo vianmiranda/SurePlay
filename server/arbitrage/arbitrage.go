@@ -5,7 +5,7 @@ import (
 	"engine/oddsdata"
 )
 
-type bookmaker_ArbOpp map[Book_Odds][]Book_Odds
+type bookmaker_ArbOpp map[Book_Odds][]Book_Profit_Margin
 
 func Arbitrage_Detection(allGames oddsdata.Response, sport string) SportOpps {
 	gameOpps := []GameOpps{}
@@ -41,11 +41,13 @@ func game_arbitrages(game oddsdata.Game) bookmaker_ArbOpp {
 	var arbitrage_opps bookmaker_ArbOpp = make(bookmaker_ArbOpp)
 	for len(t2pq) > 0 {
 		t1_bookodd := *heap.Pop(&t1pq).(*Book_Odds)
-		var temp_splice []Book_Odds
+		var temp_splice []Book_Profit_Margin
 		var temp_pq MinHeap
 		for len(t2pq) > 0 && t1_bookodd.Implied_Odds+t2pq[0].Implied_Odds < 100.0 {
 			t2_bookodd := *heap.Pop(&t2pq).(*Book_Odds)
-			temp_splice = append(temp_splice, t2_bookodd)
+			profit_percentage := Profit_Percentage(float32(t1_bookodd.Decimal_Odds), float32(t2_bookodd.Decimal_Odds))
+			t2_bookprofit := Book_Profit_Margin{profit_percentage, t2_bookodd}
+			temp_splice = append(temp_splice, t2_bookprofit)
 			temp_pq = append(temp_pq, &t2_bookodd)
 		}
 		if len(temp_splice) > 0 {

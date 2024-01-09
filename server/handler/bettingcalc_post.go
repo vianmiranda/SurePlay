@@ -64,6 +64,7 @@ func BetCalcPost() http.HandlerFunc {
 		}
 
 		ret.Profit1, ret.Profit2 = arbitrage.Calculate_Profit(odds1, odds2, ret.Value1, ret.Value2)
+		ret.Percent_Profit = arbitrage.Profit_Percentage(odds1, odds2)
 
 		responseJSON, err := json.Marshal(ret)
 		if err != nil {

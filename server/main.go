@@ -26,7 +26,7 @@ var api_inputs oddsdata.Input = oddsdata.Input{
 func main() {
 	r := chi.NewRouter()
 
-	//r.Get("/odds", handler.ArbOppsGet(findArbitrage(r, true)))
+	r.Get("/odds", handler.ArbOppsGet(findArbitrage(r, true)))
 	r.Post("/calc/{valueType}/{odds1}&{odds2}&{value1}&{value2}", handler.BetCalcPost())
 
 	fmt.Printf("\n\nServing on %s \n\n", port)

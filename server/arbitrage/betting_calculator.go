@@ -28,3 +28,10 @@ func Split_Budget(odds1 float32, odds2 float32, budget float32) (float32, float3
 func Calculate_Profit(odds1 float32, odds2 float32, amt1 float32, amt2 float32) (float32, float32) {
 	return (odds1 * amt1) - (amt1 + amt2), (odds2 * amt2) - (amt1 + amt2)
 }
+
+func Profit_Percentage(odds1 float32, odds2 float32) float32 {
+	var budget float32 = 100
+	amt1, amt2 := Split_Budget(odds1, odds2, budget)
+	profit1, profit2 := Calculate_Profit(odds1, odds2, amt1, amt2)
+	return min((profit1/budget)*100, (profit2/budget)*100)
+}
