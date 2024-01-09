@@ -24,7 +24,7 @@ func BetCalcPost() http.HandlerFunc {
 			return
 		}
 		odds2 := float32(param2)
-		param3, err := strconv.ParseFloat(chi.URLParam(r, "value"), 32)
+		param3, err := strconv.ParseFloat(chi.URLParam(r, "value1"), 32)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
@@ -35,20 +35,29 @@ func BetCalcPost() http.HandlerFunc {
 
 		switch {
 		case valueType == "budget":
+			// Where value is the total budget allocated (find value 1 and value 2)
 			ret.Value1, ret.Value2 = arbitrage.Split_Budget(odds1, odds2, value)
 			ret.Budget = value
 		case valueType == "betAmountO1":
+			// Where value is the amount bet on odds1 (find value 2 and budget)
 			ret.Value1 = value
 			ret.Value2 = arbitrage.Ensure_Profit(odds1, odds2, value)
 			ret.Budget = ret.Value1 + ret.Value2
 		case valueType == "betAmountO2":
+			// Where value is the amount bet on odds2 (find value 1 and budget)
 			ret.Value2 = value
 			ret.Value1 = arbitrage.Ensure_Profit(odds2, odds1, value)
 			ret.Budget = ret.Value1 + ret.Value2
-		// case valueType == "multiAmountO1O2": // TODO: Implement this for multiple input values
-		// 	ret.Value1 = value
-		// 	ret.Value2 = value2
-		// 	ret.Budget = ret.Value1 + ret.Value2
+		case valueType == "multiAmountO1O2":
+			// Where values are the amount bet on odds1 and odds2 (find budget)
+			param4, err := strconv.ParseFloat(chi.URLParam(r, "value2"), 32)
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+			ret.Value1 = value
+			ret.Value2 = float32(param4)
+			ret.Budget = ret.Value1 + ret.Value2
 		default:
 			http.Error(w, "valueType must be either 'budget' or 'betAmount'", http.StatusInternalServerError)
 			return
