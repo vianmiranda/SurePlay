@@ -1,12 +1,14 @@
 import { useState } from 'react'
-import Arbitrage from './pages/arbitrage'
+import Arbitrage from './pages/arbitrage/arbitrage'
+import Calculator from './pages/calculator/calculator'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Arbitrage />
+      {/* <Arbitrage /> */}
+      <Calculator />
     </>
   )
 }
