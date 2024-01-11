@@ -1,0 +1,1029 @@
+[
+    {
+        "sport": "baseball_mlb",
+        "games": []
+    },
+    {
+        "sport": "americanfootball_ncaaf",
+        "games": []
+    },
+    {
+        "sport": "icehockey_nhl",
+        "games": [
+            {
+                "home_team": "Philadelphia Flyers",
+                "away_team": "Montréal Canadiens",
+                "start_time": "2024-01-11T00:14:26Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Dallas Stars",
+                "away_team": "Minnesota Wild",
+                "start_time": "2024-01-11T00:30:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Colorado Avalanche",
+                "away_team": "Vegas Golden Knights",
+                "start_time": "2024-01-11T03:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Carolina Hurricanes",
+                "away_team": "Anaheim Ducks",
+                "start_time": "2024-01-12T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Buffalo Sabres",
+                "away_team": "Ottawa Senators",
+                "start_time": "2024-01-12T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Detroit Red Wings",
+                "away_team": "Edmonton Oilers",
+                "start_time": "2024-01-12T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Florida Panthers",
+                "away_team": "Los Angeles Kings",
+                "start_time": "2024-01-12T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Montréal Canadiens",
+                "away_team": "San Jose Sharks",
+                "start_time": "2024-01-12T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Tampa Bay Lightning",
+                "away_team": "New Jersey Devils",
+                "start_time": "2024-01-12T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "New York Islanders",
+                "away_team": "Toronto Maple Leafs",
+                "start_time": "2024-01-12T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Pittsburgh Penguins",
+                "away_team": "Vancouver Canucks",
+                "start_time": "2024-01-12T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Washington Capitals",
+                "away_team": "Seattle Kraken",
+                "start_time": "2024-01-12T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Winnipeg Jets",
+                "away_team": "Chicago Blackhawks",
+                "start_time": "2024-01-12T01:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "St Louis Blues",
+                "away_team": "New York Rangers",
+                "start_time": "2024-01-12T01:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Arizona Coyotes",
+                "away_team": "Calgary Flames",
+                "start_time": "2024-01-12T02:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Vegas Golden Knights",
+                "away_team": "Boston Bruins",
+                "start_time": "2024-01-12T03:00:00Z",
+                "arbitrage_opportunities": []
+            }
+        ]
+    },
+    {
+        "sport": "americanfootball_nfl",
+        "games": [
+            {
+                "home_team": "Houston Texans",
+                "away_team": "Cleveland Browns",
+                "start_time": "2024-01-13T21:31:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Kansas City Chiefs",
+                "away_team": "Miami Dolphins",
+                "start_time": "2024-01-14T01:16:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Buffalo Bills",
+                "away_team": "Pittsburgh Steelers",
+                "start_time": "2024-01-14T18:02:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Dallas Cowboys",
+                "away_team": "Green Bay Packers",
+                "start_time": "2024-01-14T21:31:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Detroit Lions",
+                "away_team": "Los Angeles Rams",
+                "start_time": "2024-01-15T01:15:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Tampa Bay Buccaneers",
+                "away_team": "Philadelphia Eagles",
+                "start_time": "2024-01-16T01:01:00Z",
+                "arbitrage_opportunities": []
+            }
+        ]
+    },
+    {
+        "sport": "basketball_nba",
+        "games": [
+            {
+                "home_team": "Boston Celtics",
+                "away_team": "Minnesota Timberwolves",
+                "start_time": "2024-01-11T00:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Charlotte Hornets",
+                "away_team": "Sacramento Kings",
+                "start_time": "2024-01-11T00:10:00Z",
+                "arbitrage_opportunities": [
+                    {
+                        "key": {
+                            "bookmaker": "BetMGM",
+                            "name": "Charlotte Hornets",
+                            "probabilities": {
+                                "american_odds": 260,
+                                "decimal_odds": 3.6,
+                                "implied_odds": 27.777779
+                            }
+                        },
+                        "value": [
+                            {
+                                "percent_profit": 0.79999536,
+                                "book_odds": {
+                                    "bookmaker": "PointsBet (US)",
+                                    "name": "Sacramento Kings",
+                                    "probabilities": {
+                                        "american_odds": -250,
+                                        "decimal_odds": 1.4,
+                                        "implied_odds": 71.42857
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "home_team": "Detroit Pistons",
+                "away_team": "San Antonio Spurs",
+                "start_time": "2024-01-11T00:10:00Z",
+                "arbitrage_opportunities": [
+                    {
+                        "key": {
+                            "bookmaker": "Unibet",
+                            "name": "Detroit Pistons",
+                            "probabilities": {
+                                "american_odds": 335,
+                                "decimal_odds": 4.35,
+                                "implied_odds": 22.988506
+                            }
+                        },
+                        "value": [
+                            {
+                                "percent_profit": 2.0527878,
+                                "book_odds": {
+                                    "bookmaker": "Bovada",
+                                    "name": "San Antonio Spurs",
+                                    "probabilities": {
+                                        "american_odds": -300,
+                                        "decimal_odds": 1.3333333333333333,
+                                        "implied_odds": 75
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "key": {
+                            "bookmaker": "PointsBet (US)",
+                            "name": "Detroit Pistons",
+                            "probabilities": {
+                                "american_odds": 330,
+                                "decimal_odds": 4.3,
+                                "implied_odds": 23.255814
+                            }
+                        },
+                        "value": [
+                            {
+                                "percent_profit": 1.7751465,
+                                "book_odds": {
+                                    "bookmaker": "Bovada",
+                                    "name": "San Antonio Spurs",
+                                    "probabilities": {
+                                        "american_odds": -300,
+                                        "decimal_odds": 1.3333333333333333,
+                                        "implied_odds": 75
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "key": {
+                            "bookmaker": "BetMGM",
+                            "name": "Detroit Pistons",
+                            "probabilities": {
+                                "american_odds": 325,
+                                "decimal_odds": 4.25,
+                                "implied_odds": 23.529411
+                            }
+                        },
+                        "value": [
+                            {
+                                "percent_profit": 1.4925385,
+                                "book_odds": {
+                                    "bookmaker": "Bovada",
+                                    "name": "San Antonio Spurs",
+                                    "probabilities": {
+                                        "american_odds": -300,
+                                        "decimal_odds": 1.3333333333333333,
+                                        "implied_odds": 75
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "key": {
+                            "bookmaker": "BetRivers",
+                            "name": "Detroit Pistons",
+                            "probabilities": {
+                                "american_odds": 310,
+                                "decimal_odds": 4.1,
+                                "implied_odds": 24.390244
+                            }
+                        },
+                        "value": [
+                            {
+                                "percent_profit": 0.6134949,
+                                "book_odds": {
+                                    "bookmaker": "Bovada",
+                                    "name": "San Antonio Spurs",
+                                    "probabilities": {
+                                        "american_odds": -300,
+                                        "decimal_odds": 1.3333333333333333,
+                                        "implied_odds": 75
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "home_team": "Indiana Pacers",
+                "away_team": "Washington Wizards",
+                "start_time": "2024-01-11T00:10:00Z",
+                "arbitrage_opportunities": [
+                    {
+                        "key": {
+                            "bookmaker": "PointsBet (US)",
+                            "name": "Indiana Pacers",
+                            "probabilities": {
+                                "american_odds": -160,
+                                "decimal_odds": 1.625,
+                                "implied_odds": 61.538464
+                            }
+                        },
+                        "value": [
+                            {
+                                "percent_profit": 1.4450836,
+                                "book_odds": {
+                                    "bookmaker": "Bovada",
+                                    "name": "Washington Wizards",
+                                    "probabilities": {
+                                        "american_odds": 170,
+                                        "decimal_odds": 2.7,
+                                        "implied_odds": 37.037037
+                                    }
+                                }
+                            },
+                            {
+                                "percent_profit": 0.7309952,
+                                "book_odds": {
+                                    "bookmaker": "Unibet",
+                                    "name": "Washington Wizards",
+                                    "probabilities": {
+                                        "american_odds": 165,
+                                        "decimal_odds": 2.65,
+                                        "implied_odds": 37.735847
+                                    }
+                                }
+                            },
+                            {
+                                "percent_profit": 0.5861664,
+                                "book_odds": {
+                                    "bookmaker": "FanDuel",
+                                    "name": "Washington Wizards",
+                                    "probabilities": {
+                                        "american_odds": 164,
+                                        "decimal_odds": 2.6399999999999997,
+                                        "implied_odds": 37.878788
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "home_team": "Atlanta Hawks",
+                "away_team": "Philadelphia 76ers",
+                "start_time": "2024-01-11T00:40:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Miami Heat",
+                "away_team": "Oklahoma City Thunder",
+                "start_time": "2024-01-11T00:40:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Chicago Bulls",
+                "away_team": "Houston Rockets",
+                "start_time": "2024-01-11T01:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Golden State Warriors",
+                "away_team": "New Orleans Pelicans",
+                "start_time": "2024-01-11T01:40:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Utah Jazz",
+                "away_team": "Denver Nuggets",
+                "start_time": "2024-01-11T03:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Los Angeles Clippers",
+                "away_team": "Toronto Raptors",
+                "start_time": "2024-01-11T03:40:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Cleveland Cavaliers",
+                "away_team": "Brooklyn Nets",
+                "start_time": "2024-01-11T19:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Oklahoma City Thunder",
+                "away_team": "Portland Trail Blazers",
+                "start_time": "2024-01-12T01:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Dallas Mavericks",
+                "away_team": "New York Knicks",
+                "start_time": "2024-01-12T01:40:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Los Angeles Lakers",
+                "away_team": "Phoenix Suns",
+                "start_time": "2024-01-12T03:10:00Z",
+                "arbitrage_opportunities": []
+            }
+        ]
+    },
+    {
+        "sport": "mma_mixed_martial_arts",
+        "games": [
+            {
+                "home_team": "Andrei Arlovski",
+                "away_team": "Waldo Cortes-Acosta",
+                "start_time": "2024-01-13T21:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Felipe Bunes",
+                "away_team": "Joshua Van",
+                "start_time": "2024-01-13T21:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Westin Wilson",
+                "away_team": "Jean Silva",
+                "start_time": "2024-01-13T21:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Taylor Lapilus",
+                "away_team": "Farid Basharat",
+                "start_time": "2024-01-13T21:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Gaston Bolanos",
+                "away_team": "Marcus McGhee",
+                "start_time": "2024-01-13T21:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Preston Parsons",
+                "away_team": "Matthew Semelsberger",
+                "start_time": "2024-01-13T21:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Nikolas Motta",
+                "away_team": "Tom Nolan",
+                "start_time": "2024-01-13T21:35:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Brunno Ferreira",
+                "away_team": "Phil Hawes",
+                "start_time": "2024-01-14T00:15:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Jim Miller",
+                "away_team": "Gabriel Benitez",
+                "start_time": "2024-01-14T00:15:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Mario Bautista",
+                "away_team": "Ricky Simon",
+                "start_time": "2024-01-14T00:15:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Magomed Ankalaev",
+                "away_team": "Johnny Walker",
+                "start_time": "2024-01-14T01:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Matheus Nicolau",
+                "away_team": "Manel Kape",
+                "start_time": "2024-01-14T02:15:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Priscila Cachoeira",
+                "away_team": "Jasmine Jasudavicius",
+                "start_time": "2024-01-20T23:40:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Malcolm Gordon",
+                "away_team": "Jimmy Flick",
+                "start_time": "2024-01-20T23:40:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Yohan Lainesse",
+                "away_team": "Sam Patterson",
+                "start_time": "2024-01-21T00:30:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Garrett Armfield",
+                "away_team": "Brad Katona",
+                "start_time": "2024-01-21T01:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Sean Woodson",
+                "away_team": "Charles Jourdain",
+                "start_time": "2024-01-21T01:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Polyana Viana",
+                "away_team": "Gillian Robertson",
+                "start_time": "2024-01-21T01:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Ramon Taveras",
+                "away_team": "Serhiy Sidey",
+                "start_time": "2024-01-21T01:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Arnold Allen",
+                "away_team": "Movsar Evloev",
+                "start_time": "2024-01-21T03:00:48Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Neil Magny",
+                "away_team": "Mike Malott",
+                "start_time": "2024-01-21T03:00:48Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Marc-Andre Barriault",
+                "away_team": "Chris Curtis",
+                "start_time": "2024-01-21T03:45:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Dricus Du Plessis",
+                "away_team": "Sean Strickland",
+                "start_time": "2024-01-21T04:45:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Raquel Pennington",
+                "away_team": "Mayra Bueno Silva",
+                "start_time": "2024-01-21T04:45:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Makhmud Muradov",
+                "away_team": "Aliaskhab Khizriev",
+                "start_time": "2024-02-03T21:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Blake Bilder",
+                "away_team": "Jeongyoung Lee",
+                "start_time": "2024-02-03T21:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Diana Belbita",
+                "away_team": "Molly McCann",
+                "start_time": "2024-02-03T21:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Jamal Pogues",
+                "away_team": "Thomas Petersen",
+                "start_time": "2024-02-03T21:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Luana Carolina",
+                "away_team": "Julija Stoliarenko",
+                "start_time": "2024-02-03T21:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Landon Quinones",
+                "away_team": "Marquel Mederos",
+                "start_time": "2024-02-03T21:10:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Charles Johnson",
+                "away_team": "Azat Maksum",
+                "start_time": "2024-02-03T21:55:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Gilbert Urbina",
+                "away_team": "Charlie Radtke",
+                "start_time": "2024-02-04T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Viviane Araujo",
+                "away_team": "Natalia Silva",
+                "start_time": "2024-02-04T00:15:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "William Gomis",
+                "away_team": "Melsik Baghdasaryan",
+                "start_time": "2024-02-04T00:30:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Renato Moicano",
+                "away_team": "Drew Dober",
+                "start_time": "2024-02-04T02:15:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Roman Dolidze",
+                "away_team": "Nassourdine Imavov",
+                "start_time": "2024-02-04T02:45:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Robert Bryczek",
+                "away_team": "Albert Duraev",
+                "start_time": "2024-02-11T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Daniel Marcos",
+                "away_team": "Aori Qileng",
+                "start_time": "2024-02-11T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Rodolfo Vieira",
+                "away_team": "Armen Petrosyan",
+                "start_time": "2024-02-11T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Zac Pauga",
+                "away_team": "Bogdan Guskov",
+                "start_time": "2024-02-11T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Damir Hadzovic",
+                "away_team": "Bolaji Oki",
+                "start_time": "2024-02-11T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Loma Lookboonmee",
+                "away_team": "Bruna Brasil",
+                "start_time": "2024-02-11T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Trevin Giles",
+                "away_team": "Carlos Prates",
+                "start_time": "2024-02-11T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Dan Ige",
+                "away_team": "Lerone Murphy",
+                "start_time": "2024-02-11T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Michael Johnson",
+                "away_team": "Darrius Flowers",
+                "start_time": "2024-02-11T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Devin Clark",
+                "away_team": "Marcin Prachnio",
+                "start_time": "2024-02-11T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Shayilan Nuerdanbieke",
+                "away_team": "Hyder Amil",
+                "start_time": "2024-02-11T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Max Griffin",
+                "away_team": "Jeremiah Wells",
+                "start_time": "2024-02-11T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Brad Tavares",
+                "away_team": "Gregory Rodrigues",
+                "start_time": "2024-02-11T02:15:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Jack Hermansson",
+                "away_team": "Joseph Pyfer",
+                "start_time": "2024-02-11T02:45:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Tatiana Suarez",
+                "away_team": "Amanda Lemos",
+                "start_time": "2024-02-18T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Andrea Lee",
+                "away_team": "Miranda Maverick",
+                "start_time": "2024-02-18T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Anthony Hernandez",
+                "away_team": "Ikram Aliskerov",
+                "start_time": "2024-02-18T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Zhang Mingyang",
+                "away_team": "Brendson Ribeiro",
+                "start_time": "2024-02-18T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Marcos Rogerio de Lima",
+                "away_team": "Justin Tafa",
+                "start_time": "2024-02-18T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Tai Tuivasa",
+                "away_team": "Marcin Tybura",
+                "start_time": "2024-02-18T03:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Geoffrey Neal",
+                "away_team": "Ian Garry",
+                "start_time": "2024-02-18T03:30:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Robert Whittaker",
+                "away_team": "Paulo Henrique Costa",
+                "start_time": "2024-02-18T04:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Merab Dvalishvili",
+                "away_team": "Henry Cejudo",
+                "start_time": "2024-02-18T04:30:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Ilia Topuria",
+                "away_team": "Alex Volkanovski",
+                "start_time": "2024-02-18T04:45:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Brandon Moreno",
+                "away_team": "Amir Albazi",
+                "start_time": "2024-02-25T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Yair Rodriguez",
+                "away_team": "Brian Ortega",
+                "start_time": "2024-02-25T03:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "CJ Vergara",
+                "away_team": "Asu Almabaev",
+                "start_time": "2024-03-10T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Lauren Murphy",
+                "away_team": "Karine Silva",
+                "start_time": "2024-03-10T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Katlyn Chookagian",
+                "away_team": "Maycee Barber",
+                "start_time": "2024-03-10T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Pedro Munhoz",
+                "away_team": "Kyler Phillips",
+                "start_time": "2024-03-10T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Dustin Poirier",
+                "away_team": "Benoit Saint-Denis",
+                "start_time": "2024-03-10T02:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Curtis Blaydes",
+                "away_team": "Jailton Almeida",
+                "start_time": "2024-03-10T02:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Gilbert Burns",
+                "away_team": "Jack Della Maddalena",
+                "start_time": "2024-03-10T02:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Kevin Holland",
+                "away_team": "Michael Page",
+                "start_time": "2024-03-10T02:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Mateusz Gamrot",
+                "away_team": "Rafael dos Anjos",
+                "start_time": "2024-03-10T02:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Petr Yan",
+                "away_team": "Song Yadong",
+                "start_time": "2024-03-10T02:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Sean O'Malley",
+                "away_team": "Marlon Vera",
+                "start_time": "2024-03-10T03:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Bo Nickal",
+                "away_team": "Cody Brundage",
+                "start_time": "2024-04-14T00:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Aljamain Sterling",
+                "away_team": "Calvin Kattar",
+                "start_time": "2024-04-14T02:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Jiri Prochazka",
+                "away_team": "Aleksandar Rakic",
+                "start_time": "2024-04-14T02:30:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Charles Oliveira",
+                "away_team": "Arman Tsarukyan",
+                "start_time": "2024-04-14T02:30:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Conor McGregor",
+                "away_team": "Michael Chandler",
+                "start_time": "2024-07-29T02:00:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Alex Pereira",
+                "away_team": "Israel Adesanya",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Jon Jones",
+                "away_team": "Alex Pereira",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Alex Volkanovski",
+                "away_team": "Sean O'Malley",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Alexa Grasso",
+                "away_team": "Erin Blanchfield",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Alexa Grasso",
+                "away_team": "Valentina Shevchenko",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Alexa Grasso",
+                "away_team": "Weili Zhang",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Islam Makhachev",
+                "away_team": "Arman Tsarukyan",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Leon Edwards",
+                "away_team": "Belal Muhammad",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Islam Makhachev",
+                "away_team": "Charles Oliveira",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Conor McGregor",
+                "away_team": "Michael Chandler",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Cris Cyborg",
+                "away_team": "Kayla Harrison",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Israel Adesanya",
+                "away_team": "Dricus Du Plessis",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Ilia Topuria",
+                "away_team": "Max Holloway",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Islam Makhachev",
+                "away_team": "Justin Gaethje",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Sean Strickland",
+                "away_team": "Israel Adesanya",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Jon Jones",
+                "away_team": "Stipe Miocic",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Jon Jones",
+                "away_team": "Tom Aspinall",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Justin Gaethje",
+                "away_team": "Max Holloway",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Leon Edwards",
+                "away_team": "Khamzat Chimaev",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Sean Strickland",
+                "away_team": "Khamzat Chimaev",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Leon Edwards",
+                "away_team": "Shavkat Rakhmonov",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Sean O'Malley",
+                "away_team": "Merab Dvalishvili",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            },
+            {
+                "home_team": "Weili Zhang",
+                "away_team": "Tatiana Suarez",
+                "start_time": "2024-12-31T22:59:00Z",
+                "arbitrage_opportunities": []
+            }
+        ]
+    }
+]

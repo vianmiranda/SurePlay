@@ -9,7 +9,7 @@ function ArbitrageData(props: any) {
                         return <>
                             <tr>
                                 <td>{value.percent_profit.toFixed(2)}%</td>
-                                <td>{game.start_time}</td>
+                                <td>{new Date(Date.parse(game.start_time)).toLocaleString()}</td>
                                 <td>{game.away_team} @ {game.home_team}</td>
                                 {/* <td>{opportunity.key.market}</td> */}
                                 <td>{opportunity.key.name} <br /> {value.book_odds.name} </td>
