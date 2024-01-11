@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import ArbitrageData from './components/arbitrageData';
-import './arbitrage.css';
+import {ArbitrageOpportunities, ArbitrageTable} from './components/ArbitrageTable';
+import './Arbitrage.css';
+import jsonData from './arbitrage_opps.json';
 
 interface Sports {
     sport: string
@@ -36,6 +37,7 @@ interface Sports {
 
 function Arbitrage() {
     const [data, setData] = useState<Sports[]>([]);
+    const [input, setInput] = useState<ArbitrageOpportunities[]>([]);
     const [error, setError] = useState<string>('');
 
     const URL = 'http://localhost:3000/odds';
@@ -48,8 +50,11 @@ function Arbitrage() {
                     throw new Error('Failed to fetch');
                 }
                 const data = (await response.json()) as Sports[];
+
+                // local json file
+                // const data = () => JSON.parse(JSON.stringify(jsonData));
+
                 setData(data);
-                setError('');
             } catch (error: any) {
                 setError(error.message);
                 console.error('Error fetching data:', error);
@@ -59,56 +64,56 @@ function Arbitrage() {
         fetchData();
     }, []);
 
-    console.log(data);
-    console.log(error);
+    useEffect(() => {
+        const assembleData = async () => {
+            var arb: ArbitrageOpportunities[] = new Array();
+            data.map((datum) => {
+                datum.games.map((game) => {
+                    game.arbitrage_opportunities.map((opportunity) => {
+                        opportunity.value.map((value) => {
+                            var keyao: string, valao: string;
+                            if (opportunity.key.probabilities.american_odds > 0) {
+                                keyao = '+' + opportunity.key.probabilities.american_odds;
+                            } else {
+                                keyao = '' + opportunity.key.probabilities.american_odds;
+                            }
+
+                            if (value.book_odds.probabilities.american_odds > 0) {
+                                valao = '+' + value.book_odds.probabilities.american_odds;
+                            } else {
+                                valao = '' + value.book_odds.probabilities.american_odds;
+                            }
+
+                            arb.push({
+                                profit_margin: value.percent_profit,
+                                time: new Date(Date.parse(game.start_time)).toLocaleString(),
+                                event: game.away_team + ' @ ' + game.home_team,
+                                bets: opportunity.key.name + '\r\n' + value.book_odds.name,
+                                books: keyao + ' ' + opportunity.key.bookmaker + '\r\n' + valao + ' ' + value.book_odds.bookmaker
+                            })
+                        })
+                    })
+                })
+            })
+
+            setInput(arb)
+        };
+        assembleData();
+    }, []);
+
+    // console.log(data);
+    // console.log(error);
 
     if (error) {
         return <h2>Error: {error}</h2>;
     }
 
+
     return (
         <div>
             <h1>Current Arbitrage Opportunities</h1>
-            {/* <table class="sortable" > */}
-            <table>
-                <thead>
-                    <tr>
-
-                        <th style={{ width: '15%' }}>Profit Margin</th>
-                        <th style={{ width: '17%' }}>Time</th>
-                        <th style={{ width: '28%' }}>Event</th>
-                        {/* <th style={{ width: '15%' }}>Market</th> */}
-                        <th style={{ width: '20%' }}>Bets</th>
-                        <th style={{ width: '20%' }}>Books</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <ArbitrageData data={data} />
-                </tbody>
-            </table>
-
-            {/* <ul>{data.map((datum: Sports) => {
-                return <div>
-                    <li>{datum.sport}</li> 
-                    <ul>{datum.games.map((game) => {
-                        return <div>
-                            <li>{game.away_team} @ {game.home_team} at {game.start_time}</li>
-                            <ul>{game.arbitrage_opportunities.map((opportunity) => {
-                                return <div>
-                                    {opportunity.value.map((value) => {
-                                        return <div>
-                                            <li>{opportunity.key.bookmaker} {opportunity.key.probabilities.american_odds} @ {value.book_odds.bookmaker} {value.book_odds.probabilities.american_odds}</li>
-                                            <ul>
-                                                <li>{value.percent_profit}%</li>
-                                            </ul>
-                                        </div>
-                                    })}
-                                </div>
-                            })}</ul>
-                        </div>
-                    })}</ul>
-                </div>
-            })}</ul> */}
+            <ArbitrageTable data={input} />
+            <h3>Next Update in: </h3>
         </div>
     );
 }

@@ -1,5 +1,4 @@
-import React from 'react'
-import './calculator.css'
+import './Calculator.css'
 
 import dice_red from '../../assets/dice_red.png.png'
 import dice_blue from '../../assets/dice_blue.png.png'

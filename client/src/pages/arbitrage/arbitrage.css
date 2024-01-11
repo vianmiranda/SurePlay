@@ -17,12 +17,20 @@ h1{
     font-size: 5.4rem;
     font-weight: 700;
     line-height: 1.2;
-    margin-top: 5rem;
+    margin: 5rem;
+    text-align: center; 
+}
+
+h3{
+    font-size: 2.6rem;
+    font-weight: 550;
+    line-height: 1.2;
+    margin: 5rem;
     text-align: center; 
 }
 
 table{
-    margin: 5rem auto;
+    margin: 0 auto;
     border-radius: 1.1rem;
     box-shadow: 0 0 0 1px #443C68;
     overflow: hidden;
@@ -48,6 +56,7 @@ tbody {
     font-size: 1.4rem;
     text-align: center;
     background-color: #1a1430;
+    white-space: pre-line;
 }
 
 th,td {
@@ -62,5 +71,18 @@ tr{
 tr:hover {
     background-color: #443C68;
     opacity: 0.8;
+    transition: 0.2s;
+}
+
+.sort-button {
+    background-color: transparent;
+    border: 2rem;
+    color:#fff;
+    font-size: 1.5rem;
+    transition: 0.2s;
+}
+
+.sort-reverse{
+    transform: rotate(180deg);
     transition: 0.2s;
 }
