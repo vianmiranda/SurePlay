@@ -48,16 +48,16 @@ func BetCalcPost() http.HandlerFunc {
 			ret.Value2 = value
 			ret.Value1 = arbitrage.Ensure_Profit(odds2, odds1, value)
 			ret.Budget = ret.Value1 + ret.Value2
-		case valueType == "multiAmountO1O2":
-			// Where values are the amount bet on odds1 and odds2 (find budget)
-			param4, err := strconv.ParseFloat(chi.URLParam(r, "value2"), 32)
-			if err != nil {
-				http.Error(w, err.Error(), http.StatusInternalServerError)
-				return
-			}
-			ret.Value1 = value
-			ret.Value2 = float32(param4)
-			ret.Budget = ret.Value1 + ret.Value2
+		// case valueType == "multiAmountO1O2":
+		// 	// Where values are the amount bet on odds1 and odds2 (find budget)
+		// 	param4, err := strconv.ParseFloat(chi.URLParam(r, "value2"), 32)
+		// 	if err != nil {
+		// 		http.Error(w, err.Error(), http.StatusInternalServerError)
+		// 		return
+		// 	}
+		// 	ret.Value1 = value
+		// 	ret.Value2 = float32(param4)
+		// 	ret.Budget = ret.Value1 + ret.Value2
 		default:
 			http.Error(w, "valueType must be either 'budget' or 'betAmount'", http.StatusInternalServerError)
 			return
@@ -74,6 +74,7 @@ func BetCalcPost() http.HandlerFunc {
 
 		w.Header().Set("Content-Type", "application/json")
 		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Methods", "*")
 		w.WriteHeader(http.StatusOK)
 		w.Write(responseJSON)
 	}

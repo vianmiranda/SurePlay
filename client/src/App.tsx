@@ -1,5 +1,5 @@
-import Arbitrage from './pages/arbitrage/Arbitrage'
-import Calculator from './pages/calculator/Calculator'
+import Arbitrage from './pages/arbitrage/arbitrage'
+import Calculator from './pages/calculator/calculator'
 
 function App() {
   return (
