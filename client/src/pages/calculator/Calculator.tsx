@@ -16,6 +16,11 @@ interface Bets {
     percent_profit: number
 }
 
+function americanToDecimal(odd: string) {
+    var floatOdds = parseFloat(odd)
+    return floatOdds < 0 ? ((100 / Math.abs(floatOdds)) + 1) : ((floatOdds / 100) + 1)
+}
+
 function Calculator() {
     const [odds1, setOdds1] = useState('');
     const [odds2, setOdds2] = useState('');
@@ -33,6 +38,7 @@ function Calculator() {
 
     const [filledLabels, setFilledLabels] = useState<number>(0);
     const [error, setError] = useState<any>('');
+
 
     const URL = 'http://localhost:3000/calc/'
 
@@ -64,7 +70,8 @@ function Calculator() {
             }
             else if (stake1 != "") {
                 try {
-                    const fetchURL = URL + "betAmountO1/" + odds1 + "&" + odds2 + "&" + stake1
+                    const fetchURL = URL + "betAmountO1/" + americanToDecimal(odds1) + "&" + americanToDecimal(odds2) + "&" + stake1
+                    console.log(fetchURL)
                     const response = await fetch(fetchURL, {method: 'POST'})
                     if (!response.ok) {
                         throw new Error('Could not fetch data')
@@ -80,7 +87,7 @@ function Calculator() {
             }
             else {
                 try {
-                    const fetchURL = URL + "betAmountO2/" + odds1 + "&" + odds2 + "&" + stake2
+                    const fetchURL = URL + "betAmountO2/" + americanToDecimal(odds1) + "&" + americanToDecimal(odds2) + "&" + stake2
                     const response = await fetch(fetchURL, {method: 'POST'})
                     if (!response.ok) {
                         throw new Error('Could not fetch data')
@@ -99,7 +106,7 @@ function Calculator() {
         // budget was entered
         else {
             try {
-                const fetchURL = URL + "budget/" + odds1 + "&" + odds2 + "&" + budget
+                const fetchURL = URL + "budget/" + americanToDecimal(odds1) + "&" + americanToDecimal(odds2) + "&" + budget
                 const response = await fetch(fetchURL, {method: 'POST'})
                 if (!response.ok) {
                     throw new Error('Could not fetch data')
@@ -124,83 +131,137 @@ function Calculator() {
     return (
         <div>
         <form onSubmit={handleSubmit}>
-            <label>
-                <img src={dice_blue} height="50" width="50" />
-                Odds 1:
-                <input 
-                    type="number" 
-                    value={odds1} 
-                    onChange={(e) => {
-                        setOdds1(e.target.value)
-                        setFilledLabels(filledLabels + isValidForm(odds1, e.target.value))
-                    }} 
-                    placeholder = "+/-" 
-                    required />
-            </label>
-            <br />
+            <div className="odds">
+                <label>
+                    <img src={dice_blue} height="50" width="50" />
+                    <input 
+                        type="number" 
+                        value={odds1} 
+                        onChange={(e) => {
+                            setOdds1(e.target.value)
+                            setFilledLabels(filledLabels + isValidForm(odds1, e.target.value))
+                            if (e.target.value.length === 0) {
+                                setResponse({
+                                    value1: 0,
+                                    value2: 0,
+                                    budget: 0,
+                                    profit1: 0,
+                                    profit2: 0,
+                                    percent_profit: 0,
+                                })
+                            }
+                        }} 
+                        placeholder = "+/-" 
+                        required />
+                </label>
+                <br />
 
-            <label>
-                <img src={dice_red} height="50" width="50" />
-                Odds 2:
-                <input 
-                    type="number" 
-                    value={odds2} 
-                    onChange={(e) => {
-                        setOdds2(e.target.value)
-                        setFilledLabels(filledLabels + isValidForm(odds2, e.target.value))
-                    }} 
-                    placeholder = "+/-" 
-                    required />
-            </label>
-            <br />
+                <label>
+                    <input 
+                        type="number" 
+                        value={odds2} 
+                        onChange={(e) => {
+                            setOdds2(e.target.value)
+                            setFilledLabels(filledLabels + isValidForm(odds2, e.target.value))
+                            if (e.target.value.length === 0) {
+                                setResponse({
+                                    value1: 0,
+                                    value2: 0,
+                                    budget: 0,
+                                    profit1: 0,
+                                    profit2: 0,
+                                    percent_profit: 0,
+                                })
+                            }
+                        }} 
+                        placeholder = "+/-" 
+                        required />
+                    <img src={dice_red} height="50" width="50" className="red_dice"/>
+                </label>
+                <br />
+            </div>
 
-            <label>
-                <img src={stake_blue} height="50" width="50" />
-                Stake 1:
-                <input
-                    type="number"
-                    placeholder = "$"
-                    value={stake1}
-                    onChange={(e) => {
-                        setStake1(e.target.value)
-                        setFilledLabels(filledLabels + isValidForm(stake1, e.target.value))
-                    }}
-                    disabled={!!budget || !!stake2}
-                />
-            </label>
-            <br />
+            <div className="stakes">
+                <label>
+                    <img src={stake_blue} height="50" width="50" />
+                    <input
+                        type="number"
+                        placeholder = "$"
+                        value={stake1 || (response.value1 == 0 ? "" : response.value1.toFixed(2))}
+                        onChange={(e) => {
+                            setStake1(e.target.value)
+                            setFilledLabels(filledLabels + isValidForm(stake1, e.target.value))
+                            if (e.target.value.length === 0) {
+                                setResponse({
+                                    value1: 0,
+                                    value2: 0,
+                                    budget: 0,
+                                    profit1: 0,
+                                    profit2: 0,
+                                    percent_profit: 0,
+                                })
+                            }
+                        }}
+                        disabled={!!budget || !!stake2}
+                    />
+                </label>
+                <br />
 
-            <label>
-                <img src={stake_red} height="50" width="50" />
-                Stake 2:
-                <input
-                    type="number"
-                    placeholder="$"
-                    value={stake2}
-                    onChange={(e) => {
-                        setStake2(e.target.value)
-                        setFilledLabels(filledLabels + isValidForm(stake2, e.target.value))
-                    }}
-                    disabled={!!budget || !!stake1}
-                />
-            </label>
-            <br />
+                <label>
+                    <input
+                        type="number"
+                        placeholder="$"
+                        value={stake2 || (response.value2 == 0 ? "" : response.value2.toFixed(2))}
+                        onChange={(e) => {
+                            setStake2(e.target.value)
+                            setFilledLabels(filledLabels + isValidForm(stake2, e.target.value))
+                            if (e.target.value.length === 0) {
+                                setResponse({
+                                    value1: 0,
+                                    value2: 0,
+                                    budget: 0,
+                                    profit1: 0,
+                                    profit2: 0,
+                                    percent_profit: 0,
+                                })
+                            }
+                        }}
+                        disabled={!!budget || !!stake1}
+                    />
+                    <img src={stake_red} height="50" width="50" className = "red_stake" />
+                </label>
+                <br />
+            </div>
+            
+            <div className="budget">
+                <label>
+                    <input
+                        type="number"
+                        placeholder="$"
+                        value={budget || (response.budget == 0 ? "" : response.budget.toFixed(2))}
+                        onChange={(e) => {
+                            setBudget(e.target.value)
+                            setFilledLabels(filledLabels + isValidForm(budget, e.target.value))
+                            if (e.target.value.length === 0) {
+                                setResponse({
+                                    value1: 0,
+                                    value2: 0,
+                                    budget: 0,
+                                    profit1: 0,
+                                    profit2: 0,
+                                    percent_profit: 0,
+                                })
+                            }
+                        }}
+                        disabled={!!stake1 || !!stake2}
+                    />
+                </label>
+                <br />
+            </div>
 
-            <label>
+            <div className="budget_image">
                 <img src={budget_black} height="50" width="50" />
-                Budget:
-                <input
-                    type="number"
-                    placeholder="$"
-                    value={budget}
-                    onChange={(e) => {
-                        setBudget(e.target.value)
-                        setFilledLabels(filledLabels + isValidForm(budget, e.target.value))
-                    }}
-                    disabled={!!stake1 || !!stake2}
-                />
-            </label>
-            <br />
+            </div>
             <button type="submit" disabled={filledLabels < 3}>Submit</button>
         </form>
 
@@ -208,13 +269,10 @@ function Calculator() {
 
         {response && (
             <div style={{ border: '1px solid black', padding: '10px', marginTop: '20px' }}>
-                <h3>Fetched Response</h3>
-                <p>Value 1: {response.value1}</p>
-                <p>Value 2: {response.value2}</p>
-                <p>Budget: {response.budget}</p>
-                <p>Profit 1: {response.profit1}</p>
-                <p>Profit 2: {response.profit2}</p>
-                <p>Percent Profit: {response.percent_profit}</p>
+                <h3>Summary of your betting</h3>
+                <p>With a budget of ${response.budget.toFixed(2)}, ${response.value1.toFixed(2)} on odds {parseFloat(odds1) >= 0 ? "+" + (odds1 || "0") : (odds1 || "0")}, and ${response.value2.toFixed(2)} on odds {parseFloat(odds2) >= 0 ? "+" + (odds2 || "0") : (odds2 || "0")}: </p>
+                <p>You will turn a ${response.profit1.toFixed(2)} {response.profit1 < 0 ? "loss" : "profit"}</p>
+                <p>Overall, these odds {response.percent_profit < 0 ? "do not have an arbitrage opportunity" : "do have an arbitrage opportunity with the chance to profit " + response.percent_profit.toFixed(2) + "%"}</p>
             </div>
         )}
         </div>
