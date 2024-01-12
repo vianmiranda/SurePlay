@@ -31,6 +31,9 @@ function Calculator() {
         percent_profit: 0,
     });
 
+    const [filledLabels, setFilledLabels] = useState<number>(0);
+    const [error, setError] = useState<any>('');
+
     const URL = 'http://localhost:3000/calc/'
 
     useEffect(() => {
@@ -55,7 +58,9 @@ function Calculator() {
         // if no budget was entered
         if (budget == "") {
             if (stake1 == "" && stake2 == "") {
-                console.log("You must enter at least one stake")
+                var err = "Please enter at least one stake/budget"
+                setError(err)
+                console.log(err)
             }
             else if (stake1 != "") {
                 try {
@@ -70,6 +75,7 @@ function Calculator() {
                 }
                 catch (error) {
                     console.error("Error fetching data:", error)
+                    setError(error)
                 }
             }
             else {
@@ -85,6 +91,7 @@ function Calculator() {
                 }
                 catch (error) {
                     console.error("Error fetching data:", error)
+                    setError(error)
                 }
             }
         }
@@ -103,91 +110,113 @@ function Calculator() {
             }
             catch (error) {
                 console.error("Error fetching data:", error)
+                setError(error)
             }
         }
     };
+
+    function isValidForm(original: string, value: string) {
+        if (original.length > 0 && value.length == 0) return -1;
+        else if (original.length == 0 && value.length > 0) return 1;
+        else return 0;
+    }
 
     return (
         <div>
         <form onSubmit={handleSubmit}>
             <label>
-            <img src={dice_blue} height="50" width="50" />
-            Odds 1:
-            <input type="number" value={odds1} onChange={(e) => setOdds1(e.target.value)} placeholder = "Odds 1" required />
+                <img src={dice_blue} height="50" width="50" />
+                Odds 1:
+                <input 
+                    type="number" 
+                    value={odds1} 
+                    onChange={(e) => {
+                        setOdds1(e.target.value)
+                        setFilledLabels(filledLabels + isValidForm(odds1, e.target.value))
+                    }} 
+                    placeholder = "+/-" 
+                    required />
             </label>
             <br />
 
             <label>
-            <img src={dice_red} height="50" width="50" />
-            Odds 2:
-            <input type="number" value={odds2} onChange={(e) => setOdds2(e.target.value)} placeholder = "Odds 2" required />
-            
+                <img src={dice_red} height="50" width="50" />
+                Odds 2:
+                <input 
+                    type="number" 
+                    value={odds2} 
+                    onChange={(e) => {
+                        setOdds2(e.target.value)
+                        setFilledLabels(filledLabels + isValidForm(odds2, e.target.value))
+                    }} 
+                    placeholder = "+/-" 
+                    required />
             </label>
             <br />
 
             <label>
-            <img src={stake_blue} height="50" width="50" />
-            Stake 1:
-            <input
-                type="number"
-                placeholder = "Stake on Odds 1"
-                value={stake1}
-                onChange={(e) => {
-                setStake1(e.target.value);
-                setBudget(''); // Clear budget when stake1 is changed
-                }}
-                disabled={!!budget || !!stake2}
-            />
+                <img src={stake_blue} height="50" width="50" />
+                Stake 1:
+                <input
+                    type="number"
+                    placeholder = "$"
+                    value={stake1}
+                    onChange={(e) => {
+                        setStake1(e.target.value)
+                        setFilledLabels(filledLabels + isValidForm(stake1, e.target.value))
+                    }}
+                    disabled={!!budget || !!stake2}
+                />
             </label>
             <br />
 
             <label>
-            <img src={stake_red} height="50" width="50" />
-            Stake 2:
-            <input
-                type="number"
-                placeholder="Stake on Odds 2"
-                value={stake2}
-                onChange={(e) => {
-                setStake2(e.target.value);
-                setBudget(''); // Clear budget when stake2 is changed
-                }}
-                disabled={!!budget || !!stake1}
-            />
+                <img src={stake_red} height="50" width="50" />
+                Stake 2:
+                <input
+                    type="number"
+                    placeholder="$"
+                    value={stake2}
+                    onChange={(e) => {
+                        setStake2(e.target.value)
+                        setFilledLabels(filledLabels + isValidForm(stake2, e.target.value))
+                    }}
+                    disabled={!!budget || !!stake1}
+                />
             </label>
             <br />
 
             <label>
-            <img src={budget_black} height="50" width="50" />
-            Budget:
-            <input
-                type="number"
-                placeholder="Your budget"
-                value={budget}
-                onChange={(e) => {
-                setBudget(e.target.value);
-                setStake1('');
-                setStake2('');
-                }}
-                disabled={!!stake1 || !!stake2}
-            />
+                <img src={budget_black} height="50" width="50" />
+                Budget:
+                <input
+                    type="number"
+                    placeholder="$"
+                    value={budget}
+                    onChange={(e) => {
+                        setBudget(e.target.value)
+                        setFilledLabels(filledLabels + isValidForm(budget, e.target.value))
+                    }}
+                    disabled={!!stake1 || !!stake2}
+                />
             </label>
             <br />
-            <button type="submit">Submit</button>
+            <button type="submit" disabled={filledLabels < 3}>Submit</button>
         </form>
 
+        <h2>{error}</h2>
+
         {response && (
-                <div style={{ border: '1px solid black', padding: '10px', marginTop: '20px' }}>
-                    <h3>Fetched Response</h3>
-                    <p>Value 1: {response.value1}</p>
-                    <p>Value 2: {response.value2}</p>
-                    <p>Budget: {response.budget}</p>
-                    <p>Profit 1: {response.profit1}</p>
-                    <p>Profit 2: {response.profit2}</p>
-                    <p>Percent Profit: {response.percent_profit}</p>
-                </div>
+            <div style={{ border: '1px solid black', padding: '10px', marginTop: '20px' }}>
+                <h3>Fetched Response</h3>
+                <p>Value 1: {response.value1}</p>
+                <p>Value 2: {response.value2}</p>
+                <p>Budget: {response.budget}</p>
+                <p>Profit 1: {response.profit1}</p>
+                <p>Profit 2: {response.profit2}</p>
+                <p>Percent Profit: {response.percent_profit}</p>
+            </div>
         )}
-        
         </div>
     )
 }

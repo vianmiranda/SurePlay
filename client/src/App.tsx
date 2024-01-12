@@ -4,8 +4,8 @@ import Calculator from './pages/calculator/Calculator'
 function App() {
   return (
     <>
-      <Arbitrage />
-      {/* <Calculator /> */}
+      {/* <Arbitrage /> */}
+      <Calculator />
     </>
   )
 }
