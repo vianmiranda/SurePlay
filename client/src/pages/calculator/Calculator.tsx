@@ -129,152 +129,156 @@ function Calculator() {
     }
 
     return (
-        <div>
-        <form onSubmit={handleSubmit}>
-            <div className="odds">
-                <label>
-                    <img src={dice_blue} height="50" width="50" />
-                    <input 
-                        type="number" 
-                        value={odds1} 
-                        onChange={(e) => {
-                            setOdds1(e.target.value)
-                            setFilledLabels(filledLabels + isValidForm(odds1, e.target.value))
-                            if (e.target.value.length === 0) {
-                                setResponse({
-                                    value1: 0,
-                                    value2: 0,
-                                    budget: 0,
-                                    profit1: 0,
-                                    profit2: 0,
-                                    percent_profit: 0,
-                                })
-                            }
-                        }} 
-                        placeholder = "+/-" 
-                        required />
-                </label>
-                <br />
+        <div className="entireCalculator">
+            <h1>Arbitrage Calculator</h1>
+            <form onSubmit={handleSubmit}>
+                <div className="odds">
+                    <label>
+                        <img src={dice_blue} height="50" width="50" className="blue_dice form_image"/>
+                        <input 
+                            type="number" 
+                            value={odds1} 
+                            onChange={(e) => {
+                                setOdds1(e.target.value)
+                                setFilledLabels(filledLabels + isValidForm(odds1, e.target.value))
+                                if (e.target.value.length === 0) {
+                                    setResponse({
+                                        value1: 0,
+                                        value2: 0,
+                                        budget: 0,
+                                        profit1: 0,
+                                        profit2: 0,
+                                        percent_profit: 0,
+                                    })
+                                }
+                            }} 
+                            placeholder = "(+/-) Odds 1" 
+                            required />
+                    </label>
+                    <br />
 
-                <label>
-                    <input 
-                        type="number" 
-                        value={odds2} 
-                        onChange={(e) => {
-                            setOdds2(e.target.value)
-                            setFilledLabels(filledLabels + isValidForm(odds2, e.target.value))
-                            if (e.target.value.length === 0) {
-                                setResponse({
-                                    value1: 0,
-                                    value2: 0,
-                                    budget: 0,
-                                    profit1: 0,
-                                    profit2: 0,
-                                    percent_profit: 0,
-                                })
-                            }
-                        }} 
-                        placeholder = "+/-" 
-                        required />
-                    <img src={dice_red} height="50" width="50" className="red_dice"/>
-                </label>
-                <br />
-            </div>
+                    <label>
+                        <input 
+                            type="number" 
+                            value={odds2} 
+                            onChange={(e) => {
+                                setOdds2(e.target.value)
+                                setFilledLabels(filledLabels + isValidForm(odds2, e.target.value))
+                                if (e.target.value.length === 0) {
+                                    setResponse({
+                                        value1: 0,
+                                        value2: 0,
+                                        budget: 0,
+                                        profit1: 0,
+                                        profit2: 0,
+                                        percent_profit: 0,
+                                    })
+                                }
+                            }} 
+                            placeholder = "(+/-) Odds 2" 
+                            required />
+                        <img src={dice_red} height="50" width="50" className="red_dice form_image"/>
+                    </label>
+                    <br />
+                </div>
 
-            <div className="stakes">
-                <label>
-                    <img src={stake_blue} height="50" width="50" />
-                    <input
-                        type="number"
-                        placeholder = "$"
-                        value={stake1 || (response.value1 == 0 ? "" : response.value1.toFixed(2))}
-                        onChange={(e) => {
-                            setStake1(e.target.value)
-                            setFilledLabels(filledLabels + isValidForm(stake1, e.target.value))
-                            if (e.target.value.length === 0) {
-                                setResponse({
-                                    value1: 0,
-                                    value2: 0,
-                                    budget: 0,
-                                    profit1: 0,
-                                    profit2: 0,
-                                    percent_profit: 0,
-                                })
-                            }
-                        }}
-                        disabled={!!budget || !!stake2}
-                    />
-                </label>
-                <br />
+                <div className="stakes">
+                    <label>
+                        <img src={stake_blue} height="50" width="50" className="blue_stake form_image"/>
+                        <input
+                            type="number"
+                            placeholder = "($) Stake 1"
+                            value={stake1 || (response.value1 == 0 ? "" : response.value1.toFixed(2))}
+                            onChange={(e) => {
+                                setStake1(e.target.value)
+                                setFilledLabels(filledLabels + isValidForm(stake1, e.target.value))
+                                if (e.target.value.length === 0) {
+                                    setResponse({
+                                        value1: 0,
+                                        value2: 0,
+                                        budget: 0,
+                                        profit1: 0,
+                                        profit2: 0,
+                                        percent_profit: 0,
+                                    })
+                                }
+                            }}
+                            disabled={!!budget || !!stake2}
+                        />
+                    </label>
+                    <br />
 
-                <label>
-                    <input
-                        type="number"
-                        placeholder="$"
-                        value={stake2 || (response.value2 == 0 ? "" : response.value2.toFixed(2))}
-                        onChange={(e) => {
-                            setStake2(e.target.value)
-                            setFilledLabels(filledLabels + isValidForm(stake2, e.target.value))
-                            if (e.target.value.length === 0) {
-                                setResponse({
-                                    value1: 0,
-                                    value2: 0,
-                                    budget: 0,
-                                    profit1: 0,
-                                    profit2: 0,
-                                    percent_profit: 0,
-                                })
-                            }
-                        }}
-                        disabled={!!budget || !!stake1}
-                    />
-                    <img src={stake_red} height="50" width="50" className = "red_stake" />
-                </label>
-                <br />
-            </div>
-            
-            <div className="budget">
-                <label>
-                    <input
-                        type="number"
-                        placeholder="$"
-                        value={budget || (response.budget == 0 ? "" : response.budget.toFixed(2))}
-                        onChange={(e) => {
-                            setBudget(e.target.value)
-                            setFilledLabels(filledLabels + isValidForm(budget, e.target.value))
-                            if (e.target.value.length === 0) {
-                                setResponse({
-                                    value1: 0,
-                                    value2: 0,
-                                    budget: 0,
-                                    profit1: 0,
-                                    profit2: 0,
-                                    percent_profit: 0,
-                                })
-                            }
-                        }}
-                        disabled={!!stake1 || !!stake2}
-                    />
-                </label>
-                <br />
-            </div>
+                    <label>
+                        <input
+                            type="number"
+                            placeholder="($) Stake 2"
+                            value={stake2 || (response.value2 == 0 ? "" : response.value2.toFixed(2))}
+                            onChange={(e) => {
+                                setStake2(e.target.value)
+                                setFilledLabels(filledLabels + isValidForm(stake2, e.target.value))
+                                if (e.target.value.length === 0) {
+                                    setResponse({
+                                        value1: 0,
+                                        value2: 0,
+                                        budget: 0,
+                                        profit1: 0,
+                                        profit2: 0,
+                                        percent_profit: 0,
+                                    })
+                                }
+                            }}
+                            disabled={!!budget || !!stake1}
+                        />
+                        <img src={stake_red} height="50" width="50" className = "red_stake form_image" />
+                    </label>
+                    <br />
+                </div>
+                
+                <div className="budget">
+                    <label>
+                        <input
+                            type="number" 
+                            placeholder="($) Budget"
+                            value={budget || (response.budget == 0 ? "" : response.budget.toFixed(2))}
+                            onChange={(e) => {
+                                setBudget(e.target.value)
+                                setFilledLabels(filledLabels + isValidForm(budget, e.target.value))
+                                if (e.target.value.length === 0) {
+                                    setResponse({
+                                        value1: 0,
+                                        value2: 0,
+                                        budget: 0,
+                                        profit1: 0,
+                                        profit2: 0,
+                                        percent_profit: 0,
+                                    })
+                                }
+                            }}
+                            disabled={!!stake1 || !!stake2}
+                        />
+                    </label>
+                    <br />
+                </div>
 
-            <div className="budget_image">
-                <img src={budget_black} height="50" width="50" />
-            </div>
-            <button type="submit" disabled={filledLabels < 3}>Submit</button>
-        </form>
+                {/* <div className="budget_image form_image">
+                    <img src={budget_black} height="50" width="50" />
+                </div> */}
+                <button type="submit" disabled={filledLabels < 3}>Calculate</button>
+            </form>
 
-        <h2>{error}</h2>
+            <h2>{error}</h2>
 
-        {response && (
-            <div style={{ border: '1px solid black', padding: '10px', marginTop: '20px' }}>
-                <h3>Summary of your betting</h3>
-                <p>With a budget of ${response.budget.toFixed(2)}, ${response.value1.toFixed(2)} on odds {parseFloat(odds1) >= 0 ? "+" + (odds1 || "0") : (odds1 || "0")}, and ${response.value2.toFixed(2)} on odds {parseFloat(odds2) >= 0 ? "+" + (odds2 || "0") : (odds2 || "0")}: </p>
-                <p>You will turn a ${response.profit1.toFixed(2)} {response.profit1 < 0 ? "loss" : "profit"}</p>
-                <p>Overall, these odds {response.percent_profit < 0 ? "do not have an arbitrage opportunity" : "do have an arbitrage opportunity with the chance to profit " + response.percent_profit.toFixed(2) + "%"}</p>
-            </div>
-        )}
+            {response && (
+                <div className={"summary " + (response.percent_profit == 0 ? "" : (response.percent_profit < 0 ? "arb_no" : "arb_yes"))}>
+                    <h3>{(response.percent_profit <= 0 ? "No Arbitrage Opportunity" : "Arbitrage Opportunity Present")}</h3>
+                    <p>${response.value1.toFixed(2)} at {parseFloat(odds1) >= 0 ? "+" + (odds1 || "0") : (odds1 || "0")}</p>
+                    <p>${response.value2.toFixed(2)} at {parseFloat(odds2) >= 0 ? "+" + (odds2 || "0") : (odds2 || "0")}</p>
+                    <p>Budget: ${response.budget.toFixed(2)}</p>
+                    <hr className="spacing"></hr>
+                    <p><b>Profit: </b>${response.profit1.toFixed(2)}</p>
+                    <p><b>Profit Margin: </b>{response.percent_profit.toFixed(2) + "%"}</p>
+                </div>
+            )}
         </div>
     )
 }
