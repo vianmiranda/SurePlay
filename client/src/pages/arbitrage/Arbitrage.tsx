@@ -67,6 +67,7 @@ function Arbitrage() {
     useEffect(() => {
         const assembleData = async () => {
             var arb: ArbitrageOpportunities[] = new Array();
+            var i = 0;
             data.map((datum) => {
                 datum.games.map((game) => {
                     game.arbitrage_opportunities.map((opportunity) => {
@@ -85,12 +86,14 @@ function Arbitrage() {
                             }
 
                             arb.push({
+                                id: i,
                                 profit_margin: value.percent_profit,
                                 time: new Date(Date.parse(game.start_time)).toLocaleString(),
                                 event: game.away_team + ' @ ' + game.home_team,
                                 bets: opportunity.key.name + '\r\n' + value.book_odds.name,
                                 books: keyao + ' ' + opportunity.key.bookmaker + '\r\n' + valao + ' ' + value.book_odds.bookmaker
                             })
+                            i++;
                         })
                     })
                 })
@@ -99,7 +102,7 @@ function Arbitrage() {
             setInput(arb)
         };
         assembleData();
-    }, []);
+    }, [data]);
 
     // console.log(data);
     // console.log(error);

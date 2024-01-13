@@ -2,24 +2,22 @@ h1{
   font-size: 5.4rem;
   font-weight: 700;
   line-height: 1.2;
-  text-align: center; 
+  text-align: center;
+  margin:auto
 }
 
 .entireCalculator{
-    position: fixed;
-    top: 50%;
+    position: absolute;
     left: 50%;
-    margin-top: -38.5rem;
-    margin-left: -28.5rem; 
+    margin-top: 7.5rem;
+    margin-left: -28rem; 
 }
 
 form {
     display: flex;
     flex-direction: column;
     max-width: 400px;
-    /* margin: auto; */
-    margin-top: 5rem;
-    margin-left: 3rem;
+    margin-left: 2.5rem;
 }
 
 .odds,
@@ -130,7 +128,7 @@ button:disabled {
 .summary h3, p, .spacing {
     text-align: center;
     font-size: 3rem;
-    margin: 1rem;
+    margin: 1.2rem;
 }
 
 .summary p {

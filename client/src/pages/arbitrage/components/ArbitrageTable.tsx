@@ -1,6 +1,7 @@
 import { MouseEventHandler, useCallback, useState } from "react";
 
 interface ArbitrageOpportunities {
+    id: number
     profit_margin: number;
     time: string;
     event: string;
@@ -36,7 +37,7 @@ function ArbitrageTable ({data}:{data:ArbitrageOpportunities[]} ) {
             <tbody>
                 {sortedData().map((datum: ArbitrageOpportunities) => {
                     return (
-                        <tr>
+                        <tr key={datum.id}>
                             <td>{datum.profit_margin.toFixed(2)}%</td>
                             <td>{datum.time}</td>
                             <td>{datum.event}</td>
