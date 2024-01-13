@@ -1,4 +1,6 @@
 import { MouseEventHandler, useCallback, useState } from "react";
+import calculator from '../../../assets/calculator.png'
+import { Link } from 'react-router-dom';
 
 interface ArbitrageOpportunities {
     id: number
@@ -7,6 +9,8 @@ interface ArbitrageOpportunities {
     event: string;
     bets: string;
     books: string;
+    odd1: string;
+    odd2: string;
 }
 
 function ArbitrageTable ({data}:{data:ArbitrageOpportunities[]} ) {
@@ -27,7 +31,8 @@ function ArbitrageTable ({data}:{data:ArbitrageOpportunities[]} ) {
         <table>
             <thead>
                 <tr>
-                    <th style={{ width: '15%' }} key='profit_margin'>Profit Margin <SortButton column='profit_margin' onClick={() => changeSort('profit_margin')} {...{descending, sortColumn}}/></th>
+                    <th style={{ width: '1%' }}></th>
+                    <th style={{ width: '14%' }} key='profit_margin'>Profit Margin <SortButton column='profit_margin' onClick={() => changeSort('profit_margin')} {...{descending, sortColumn}}/></th>
                     <th style={{ width: '17%' }} key='time'>Time <SortButton column='time' onClick={() => changeSort('time')} {...{descending, sortColumn}}/></th>
                     <th style={{ width: '28%' }}>Event</th>
                     <th style={{ width: '20%' }}>Bets</th>
@@ -38,6 +43,14 @@ function ArbitrageTable ({data}:{data:ArbitrageOpportunities[]} ) {
                 {sortedData().map((datum: ArbitrageOpportunities) => {
                     return (
                         <tr key={datum.id}>
+                            <td>
+                                <Link 
+                                to={"/calculator/?odds1=" + datum.odd1 + "&odds2=" + datum.odd2}>
+                                    <button className="calculatorButton">
+                                        <img src={calculator} height="40" width="40"/>
+                                    </button>
+                                </Link>
+                            </td>
                             <td>{datum.profit_margin.toFixed(2)}%</td>
                             <td>{datum.time}</td>
                             <td>{datum.event}</td>

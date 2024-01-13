@@ -21,6 +21,15 @@ function americanToDecimal(odd: string) {
     return floatOdds < 0 ? ((100 / Math.abs(floatOdds)) + 1) : ((floatOdds / 100) + 1)
 }
 
+function parseURLforOdds() {
+    const searchParams = new URLSearchParams(window.location.search);
+
+    var odds1 = searchParams.get('odds1')?.trim();
+    var odds2 = searchParams.get('odds2')?.trim();
+
+    return [odds1, odds2];
+}
+
 function Calculator() {
     const [odds1, setOdds1] = useState('');
     const [odds2, setOdds2] = useState('');
@@ -39,13 +48,18 @@ function Calculator() {
     const [filledLabels, setFilledLabels] = useState<number>(0);
     const [error, setError] = useState<any>('');
 
+    var presetOdds : (string | undefined)[] = parseURLforOdds();
+    useEffect(() => {
+        if (presetOdds[0] !== undefined) {
+            setOdds1(presetOdds[0]);
+            setFilledLabels(1);
+        } if (presetOdds[1] !== undefined) {
+            setOdds2(presetOdds[1]);
+            setFilledLabels(2);
+        }
+    }, []);
 
     const URL = 'http://localhost:3000/calc/'
-
-    useEffect(() => {
-        console.log(response);
-    }, [response]);
-
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -139,8 +153,8 @@ function Calculator() {
                             type="number" 
                             value={odds1} 
                             onChange={(e) => {
-                                setOdds1(e.target.value)
                                 setFilledLabels(filledLabels + isValidForm(odds1, e.target.value))
+                                setOdds1(e.target.value)
                                 if (e.target.value.length === 0) {
                                     setResponse({
                                         value1: 0,
@@ -162,8 +176,8 @@ function Calculator() {
                             type="number" 
                             value={odds2} 
                             onChange={(e) => {
-                                setOdds2(e.target.value)
                                 setFilledLabels(filledLabels + isValidForm(odds2, e.target.value))
+                                setOdds2(e.target.value)
                                 if (e.target.value.length === 0) {
                                     setResponse({
                                         value1: 0,
@@ -190,8 +204,8 @@ function Calculator() {
                             placeholder = "($) Stake 1"
                             value={stake1 || (response.value1 == 0 ? "" : response.value1.toFixed(2))}
                             onChange={(e) => {
-                                setStake1(e.target.value)
                                 setFilledLabels(filledLabels + isValidForm(stake1, e.target.value))
+                                setStake1(e.target.value)
                                 if (e.target.value.length === 0) {
                                     setResponse({
                                         value1: 0,
@@ -214,8 +228,8 @@ function Calculator() {
                             placeholder="($) Stake 2"
                             value={stake2 || (response.value2 == 0 ? "" : response.value2.toFixed(2))}
                             onChange={(e) => {
-                                setStake2(e.target.value)
                                 setFilledLabels(filledLabels + isValidForm(stake2, e.target.value))
+                                setStake2(e.target.value)
                                 if (e.target.value.length === 0) {
                                     setResponse({
                                         value1: 0,
@@ -241,8 +255,8 @@ function Calculator() {
                             placeholder="($) Budget"
                             value={budget || (response.budget == 0 ? "" : response.budget.toFixed(2))}
                             onChange={(e) => {
-                                setBudget(e.target.value)
                                 setFilledLabels(filledLabels + isValidForm(budget, e.target.value))
+                                setBudget(e.target.value)
                                 if (e.target.value.length === 0) {
                                     setResponse({
                                         value1: 0,

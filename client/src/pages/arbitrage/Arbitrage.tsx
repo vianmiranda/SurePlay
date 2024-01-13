@@ -91,7 +91,9 @@ function Arbitrage() {
                                 time: new Date(Date.parse(game.start_time)).toLocaleString(),
                                 event: game.away_team + ' @ ' + game.home_team,
                                 bets: opportunity.key.name + '\r\n' + value.book_odds.name,
-                                books: keyao + ' ' + opportunity.key.bookmaker + '\r\n' + valao + ' ' + value.book_odds.bookmaker
+                                books: keyao + ' ' + opportunity.key.bookmaker + '\r\n' + valao + ' ' + value.book_odds.bookmaker,
+                                odd1: keyao,
+                                odd2: valao
                             })
                             i++;
                         })
