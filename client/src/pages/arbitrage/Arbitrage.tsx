@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import {ArbitrageOpportunities, ArbitrageTable} from './components/ArbitrageTable';
 import Timer from './components/Timer';
 import './Arbitrage.css';
-// import jsonData from './arbitrage_opps.json';
+// import jsonData from './sample.json';
 
 interface Response {
     response_time: number;
@@ -73,6 +73,14 @@ function Arbitrage() {
         return () => clearInterval(interval);
     }, [data]);
 
+    let formattedSportMap = new Map<string, string>();
+    formattedSportMap.set('mma_mixed_martial_arts', 'Mixed Martial Arts | MMA');
+    formattedSportMap.set('basketball_nba', 'Basketball | NBA');
+    formattedSportMap.set('americanfootball_ncaaf', 'Football | NCAAF');
+    formattedSportMap.set('americanfootball_nfl', 'Football | NFL');
+    formattedSportMap.set('baseball_mlb', 'Baseball | MLB');
+    formattedSportMap.set('icehockey_nhl', 'Ice Hockey | NHL');
+    
     useEffect(() => {
         const assembleData = async () => {
             var arb: ArbitrageOpportunities[] = new Array();
@@ -100,6 +108,7 @@ function Arbitrage() {
                                     profit_margin: value.percent_profit,
                                     time: new Date(Date.parse(game.start_time)).toLocaleString(),
                                     event: game.away_team + ' @ ' + game.home_team,
+                                    event_sport: formattedSportMap.get(datum.sport),
                                     bets: opportunity.key.name + '\r\n' + value.book_odds.name,
                                     books: keyao + ' ' + opportunity.key.bookmaker + '\r\n' + valao + ' ' + value.book_odds.bookmaker,
                                     odd1: keyao,

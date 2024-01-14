@@ -1,0 +1,1674 @@
+{
+    "response_time": 1705271197,
+    "next_response_time": 600,
+    "sports": [
+        {
+            "sport": "baseball_mlb",
+            "games": []
+        },
+        {
+            "sport": "americanfootball_ncaaf",
+            "games": []
+        },
+        {
+            "sport": "americanfootball_nfl",
+            "games": [
+                {
+                    "home_team": "Dallas Cowboys",
+                    "away_team": "Green Bay Packers",
+                    "start_time": "2024-01-14T21:41:15Z",
+                    "arbitrage_opportunities": [
+                        {
+                            "key": {
+                                "bookmaker": "Unibet",
+                                "name": "Dallas Cowboys",
+                                "probabilities": {
+                                    "american_odds": 132,
+                                    "decimal_odds": 2.3200000000000003,
+                                    "implied_odds": 43.10345
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 2.4076996,
+                                    "book_odds": {
+                                        "bookmaker": "Caesars",
+                                        "name": "Green Bay Packers",
+                                        "probabilities": {
+                                            "american_odds": -120,
+                                            "decimal_odds": 1.8333333333333335,
+                                            "implied_odds": 54.545456
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "key": {
+                                "bookmaker": "PointsBet (US)",
+                                "name": "Dallas Cowboys",
+                                "probabilities": {
+                                    "american_odds": 130,
+                                    "decimal_odds": 2.3,
+                                    "implied_odds": 43.478264
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 2.0161285,
+                                    "book_odds": {
+                                        "bookmaker": "Caesars",
+                                        "name": "Green Bay Packers",
+                                        "probabilities": {
+                                            "american_odds": -120,
+                                            "decimal_odds": 1.8333333333333335,
+                                            "implied_odds": 54.545456
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "key": {
+                                "bookmaker": "Bovada",
+                                "name": "Dallas Cowboys",
+                                "probabilities": {
+                                    "american_odds": 125,
+                                    "decimal_odds": 2.25,
+                                    "implied_odds": 44.444447
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 1.0204086,
+                                    "book_odds": {
+                                        "bookmaker": "Caesars",
+                                        "name": "Green Bay Packers",
+                                        "probabilities": {
+                                            "american_odds": -120,
+                                            "decimal_odds": 1.8333333333333335,
+                                            "implied_odds": 54.545456
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "key": {
+                                "bookmaker": "WynnBET",
+                                "name": "Dallas Cowboys",
+                                "probabilities": {
+                                    "american_odds": 125,
+                                    "decimal_odds": 2.25,
+                                    "implied_odds": 44.444447
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 1.0204086,
+                                    "book_odds": {
+                                        "bookmaker": "Caesars",
+                                        "name": "Green Bay Packers",
+                                        "probabilities": {
+                                            "american_odds": -120,
+                                            "decimal_odds": 1.8333333333333335,
+                                            "implied_odds": 54.545456
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "home_team": "Detroit Lions",
+                    "away_team": "Los Angeles Rams",
+                    "start_time": "2024-01-15T01:16:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Buffalo Bills",
+                    "away_team": "Pittsburgh Steelers",
+                    "start_time": "2024-01-15T21:35:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Tampa Bay Buccaneers",
+                    "away_team": "Philadelphia Eagles",
+                    "start_time": "2024-01-16T01:20:00Z",
+                    "arbitrage_opportunities": []
+                }
+            ]
+        },
+        {
+            "sport": "mma_mixed_martial_arts",
+            "games": [
+                {
+                    "home_team": "Priscila Cachoeira",
+                    "away_team": "Jasmine Jasudavicius",
+                    "start_time": "2024-01-20T23:40:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Malcolm Gordon",
+                    "away_team": "Jimmy Flick",
+                    "start_time": "2024-01-20T23:40:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Yohan Lainesse",
+                    "away_team": "Sam Patterson",
+                    "start_time": "2024-01-21T00:30:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Garrett Armfield",
+                    "away_team": "Brad Katona",
+                    "start_time": "2024-01-21T01:10:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Sean Woodson",
+                    "away_team": "Charles Jourdain",
+                    "start_time": "2024-01-21T01:10:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Polyana Viana",
+                    "away_team": "Gillian Robertson",
+                    "start_time": "2024-01-21T01:10:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Ramon Taveras",
+                    "away_team": "Serhiy Sidey",
+                    "start_time": "2024-01-21T01:10:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Arnold Allen",
+                    "away_team": "Movsar Evloev",
+                    "start_time": "2024-01-21T03:00:48Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Neil Magny",
+                    "away_team": "Mike Malott",
+                    "start_time": "2024-01-21T03:00:48Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Marc-Andre Barriault",
+                    "away_team": "Chris Curtis",
+                    "start_time": "2024-01-21T03:45:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Dricus Du Plessis",
+                    "away_team": "Sean Strickland",
+                    "start_time": "2024-01-21T04:45:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Raquel Pennington",
+                    "away_team": "Mayra Bueno Silva",
+                    "start_time": "2024-01-21T04:45:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Blake Bilder",
+                    "away_team": "Jeongyoung Lee",
+                    "start_time": "2024-02-03T21:10:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Diana Belbita",
+                    "away_team": "Molly McCann",
+                    "start_time": "2024-02-03T21:10:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Jamal Pogues",
+                    "away_team": "Thomas Petersen",
+                    "start_time": "2024-02-03T21:10:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Landon Quinones",
+                    "away_team": "Marquel Mederos",
+                    "start_time": "2024-02-03T21:10:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Viviane Araujo",
+                    "away_team": "Natalia Silva",
+                    "start_time": "2024-02-03T21:10:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Charles Johnson",
+                    "away_team": "Azat Maksum",
+                    "start_time": "2024-02-03T21:55:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Gilbert Urbina",
+                    "away_team": "Charlie Radtke",
+                    "start_time": "2024-02-04T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Randy Brown",
+                    "away_team": "Muslim Salikhov",
+                    "start_time": "2024-02-04T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Makhmud Muradov",
+                    "away_team": "Aliaskhab Khizriev",
+                    "start_time": "2024-02-04T00:15:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Luana Carolina",
+                    "away_team": "Julija Stoliarenko",
+                    "start_time": "2024-02-04T00:15:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "William Gomis",
+                    "away_team": "Melsik Baghdasaryan",
+                    "start_time": "2024-02-04T00:30:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Renato Moicano",
+                    "away_team": "Drew Dober",
+                    "start_time": "2024-02-04T02:15:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Roman Dolidze",
+                    "away_team": "Nassourdine Imavov",
+                    "start_time": "2024-02-04T02:45:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Melsik Baghdasaryan",
+                    "away_team": "Hyder Amil",
+                    "start_time": "2024-02-10T21:10:00Z",
+                    "arbitrage_opportunities": [
+                        {
+                            "key": {
+                                "bookmaker": "BetOnline.ag",
+                                "name": "Hyder Amil",
+                                "probabilities": {
+                                    "american_odds": 190,
+                                    "decimal_odds": 2.9,
+                                    "implied_odds": 34.482758
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 15.122871,
+                                    "book_odds": {
+                                        "bookmaker": "Bovada",
+                                        "name": "Melsik Baghdasaryan",
+                                        "probabilities": {
+                                            "american_odds": -110,
+                                            "decimal_odds": 1.9090909090909092,
+                                            "implied_odds": 52.380955
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "key": {
+                                "bookmaker": "LowVig.ag",
+                                "name": "Hyder Amil",
+                                "probabilities": {
+                                    "american_odds": 190,
+                                    "decimal_odds": 2.9,
+                                    "implied_odds": 34.482758
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 15.122871,
+                                    "book_odds": {
+                                        "bookmaker": "Bovada",
+                                        "name": "Melsik Baghdasaryan",
+                                        "probabilities": {
+                                            "american_odds": -110,
+                                            "decimal_odds": 1.9090909090909092,
+                                            "implied_odds": 52.380955
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "key": {
+                                "bookmaker": "BetUS",
+                                "name": "Hyder Amil",
+                                "probabilities": {
+                                    "american_odds": 185,
+                                    "decimal_odds": 2.85,
+                                    "implied_odds": 35.08772
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 14.326646,
+                                    "book_odds": {
+                                        "bookmaker": "Bovada",
+                                        "name": "Melsik Baghdasaryan",
+                                        "probabilities": {
+                                            "american_odds": -110,
+                                            "decimal_odds": 1.9090909090909092,
+                                            "implied_odds": 52.380955
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "home_team": "Robert Bryczek",
+                    "away_team": "Albert Duraev",
+                    "start_time": "2024-02-11T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Daniel Marcos",
+                    "away_team": "Aori Qileng",
+                    "start_time": "2024-02-11T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Rodolfo Vieira",
+                    "away_team": "Armen Petrosyan",
+                    "start_time": "2024-02-11T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Zac Pauga",
+                    "away_team": "Bogdan Guskov",
+                    "start_time": "2024-02-11T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Damir Hadzovic",
+                    "away_team": "Bolaji Oki",
+                    "start_time": "2024-02-11T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Loma Lookboonmee",
+                    "away_team": "Bruna Brasil",
+                    "start_time": "2024-02-11T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Trevin Giles",
+                    "away_team": "Carlos Prates",
+                    "start_time": "2024-02-11T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Dan Ige",
+                    "away_team": "Lerone Murphy",
+                    "start_time": "2024-02-11T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Michael Johnson",
+                    "away_team": "Darrius Flowers",
+                    "start_time": "2024-02-11T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Devin Clark",
+                    "away_team": "Marcin Prachnio",
+                    "start_time": "2024-02-11T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Shayilan Nuerdanbieke",
+                    "away_team": "Hyder Amil",
+                    "start_time": "2024-02-11T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Max Griffin",
+                    "away_team": "Jeremiah Wells",
+                    "start_time": "2024-02-11T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Brad Tavares",
+                    "away_team": "Gregory Rodrigues",
+                    "start_time": "2024-02-11T00:15:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Jack Hermansson",
+                    "away_team": "Joseph Pyfer",
+                    "start_time": "2024-02-11T02:45:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Tatiana Suarez",
+                    "away_team": "Amanda Lemos",
+                    "start_time": "2024-02-18T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Andrea Lee",
+                    "away_team": "Miranda Maverick",
+                    "start_time": "2024-02-18T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Anthony Hernandez",
+                    "away_team": "Ikram Aliskerov",
+                    "start_time": "2024-02-18T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Zhang Mingyang",
+                    "away_team": "Brendson Ribeiro",
+                    "start_time": "2024-02-18T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Marcos Rogerio de Lima",
+                    "away_team": "Justin Tafa",
+                    "start_time": "2024-02-18T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Tai Tuivasa",
+                    "away_team": "Marcin Tybura",
+                    "start_time": "2024-02-18T03:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Geoffrey Neal",
+                    "away_team": "Ian Garry",
+                    "start_time": "2024-02-18T03:30:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Robert Whittaker",
+                    "away_team": "Paulo Henrique Costa",
+                    "start_time": "2024-02-18T04:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Merab Dvalishvili",
+                    "away_team": "Henry Cejudo",
+                    "start_time": "2024-02-18T04:30:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Ilia Topuria",
+                    "away_team": "Alex Volkanovski",
+                    "start_time": "2024-02-18T04:45:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Brandon Moreno",
+                    "away_team": "Amir Albazi",
+                    "start_time": "2024-02-25T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Yair Rodriguez",
+                    "away_team": "Brian Ortega",
+                    "start_time": "2024-02-25T03:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "CJ Vergara",
+                    "away_team": "Asu Almabaev",
+                    "start_time": "2024-03-10T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Lauren Murphy",
+                    "away_team": "Karine Silva",
+                    "start_time": "2024-03-10T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Katlyn Chookagian",
+                    "away_team": "Maycee Barber",
+                    "start_time": "2024-03-10T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Pedro Munhoz",
+                    "away_team": "Kyler Phillips",
+                    "start_time": "2024-03-10T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Dustin Poirier",
+                    "away_team": "Benoit Saint-Denis",
+                    "start_time": "2024-03-10T02:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Curtis Blaydes",
+                    "away_team": "Jailton Almeida",
+                    "start_time": "2024-03-10T02:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Gilbert Burns",
+                    "away_team": "Jack Della Maddalena",
+                    "start_time": "2024-03-10T02:00:00Z",
+                    "arbitrage_opportunities": [
+                        {
+                            "key": {
+                                "bookmaker": "LowVig.ag",
+                                "name": "Gilbert Burns",
+                                "probabilities": {
+                                    "american_odds": -110,
+                                    "decimal_odds": 1.9090909090909092,
+                                    "implied_odds": 52.380955
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 1.1198196,
+                                    "book_odds": {
+                                        "bookmaker": "Caesars",
+                                        "name": "Jack Della Maddalena",
+                                        "probabilities": {
+                                            "american_odds": 115,
+                                            "decimal_odds": 2.15,
+                                            "implied_odds": 46.511627
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 0.8980713,
+                                    "book_odds": {
+                                        "bookmaker": "FanDuel",
+                                        "name": "Jack Della Maddalena",
+                                        "probabilities": {
+                                            "american_odds": 114,
+                                            "decimal_odds": 2.1399999999999997,
+                                            "implied_odds": 46.72897
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "key": {
+                                "bookmaker": "BetOnline.ag",
+                                "name": "Gilbert Burns",
+                                "probabilities": {
+                                    "american_odds": -110,
+                                    "decimal_odds": 1.9090909090909092,
+                                    "implied_odds": 52.380955
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 1.1198196,
+                                    "book_odds": {
+                                        "bookmaker": "Caesars",
+                                        "name": "Jack Della Maddalena",
+                                        "probabilities": {
+                                            "american_odds": 115,
+                                            "decimal_odds": 2.15,
+                                            "implied_odds": 46.511627
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 0.8980713,
+                                    "book_odds": {
+                                        "bookmaker": "FanDuel",
+                                        "name": "Jack Della Maddalena",
+                                        "probabilities": {
+                                            "american_odds": 114,
+                                            "decimal_odds": 2.1399999999999997,
+                                            "implied_odds": 46.72897
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "home_team": "Kevin Holland",
+                    "away_team": "Michael Page",
+                    "start_time": "2024-03-10T02:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Mateusz Gamrot",
+                    "away_team": "Rafael dos Anjos",
+                    "start_time": "2024-03-10T02:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Petr Yan",
+                    "away_team": "Song Yadong",
+                    "start_time": "2024-03-10T02:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Sean O'Malley",
+                    "away_team": "Marlon Vera",
+                    "start_time": "2024-03-10T03:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Bo Nickal",
+                    "away_team": "Cody Brundage",
+                    "start_time": "2024-04-14T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Aljamain Sterling",
+                    "away_team": "Calvin Kattar",
+                    "start_time": "2024-04-14T02:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Jiri Prochazka",
+                    "away_team": "Aleksandar Rakic",
+                    "start_time": "2024-04-14T02:30:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Charles Oliveira",
+                    "away_team": "Arman Tsarukyan",
+                    "start_time": "2024-04-14T02:30:00Z",
+                    "arbitrage_opportunities": [
+                        {
+                            "key": {
+                                "bookmaker": "DraftKings",
+                                "name": "Arman Tsarukyan",
+                                "probabilities": {
+                                    "american_odds": -166,
+                                    "decimal_odds": 1.6024096385542168,
+                                    "implied_odds": 62.406013
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 0.5600662,
+                                    "book_odds": {
+                                        "bookmaker": "LowVig.ag",
+                                        "name": "Charles Oliveira",
+                                        "probabilities": {
+                                            "american_odds": 170,
+                                            "decimal_odds": 2.7,
+                                            "implied_odds": 37.037037
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 0.5600662,
+                                    "book_odds": {
+                                        "bookmaker": "BetOnline.ag",
+                                        "name": "Charles Oliveira",
+                                        "probabilities": {
+                                            "american_odds": 170,
+                                            "decimal_odds": 2.7,
+                                            "implied_odds": 37.037037
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "key": {
+                                "bookmaker": "BetRivers",
+                                "name": "Arman Tsarukyan",
+                                "probabilities": {
+                                    "american_odds": -167,
+                                    "decimal_odds": 1.5988023952095807,
+                                    "implied_odds": 62.546814
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 0.41788483,
+                                    "book_odds": {
+                                        "bookmaker": "LowVig.ag",
+                                        "name": "Charles Oliveira",
+                                        "probabilities": {
+                                            "american_odds": 170,
+                                            "decimal_odds": 2.7,
+                                            "implied_odds": 37.037037
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 0.41788483,
+                                    "book_odds": {
+                                        "bookmaker": "BetOnline.ag",
+                                        "name": "Charles Oliveira",
+                                        "probabilities": {
+                                            "american_odds": 170,
+                                            "decimal_odds": 2.7,
+                                            "implied_odds": 37.037037
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "key": {
+                                "bookmaker": "Unibet",
+                                "name": "Arman Tsarukyan",
+                                "probabilities": {
+                                    "american_odds": -167,
+                                    "decimal_odds": 1.5988023952095807,
+                                    "implied_odds": 62.546814
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 0.41788483,
+                                    "book_odds": {
+                                        "bookmaker": "LowVig.ag",
+                                        "name": "Charles Oliveira",
+                                        "probabilities": {
+                                            "american_odds": 170,
+                                            "decimal_odds": 2.7,
+                                            "implied_odds": 37.037037
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 0.41788483,
+                                    "book_odds": {
+                                        "bookmaker": "BetOnline.ag",
+                                        "name": "Charles Oliveira",
+                                        "probabilities": {
+                                            "american_odds": 170,
+                                            "decimal_odds": 2.7,
+                                            "implied_odds": 37.037037
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "home_team": "Conor McGregor",
+                    "away_team": "Michael Chandler",
+                    "start_time": "2024-07-29T02:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Alex Pereira",
+                    "away_team": "Israel Adesanya",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Jon Jones",
+                    "away_team": "Alex Pereira",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Alex Volkanovski",
+                    "away_team": "Sean O'Malley",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Alexa Grasso",
+                    "away_team": "Erin Blanchfield",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Alexa Grasso",
+                    "away_team": "Valentina Shevchenko",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Alexa Grasso",
+                    "away_team": "Weili Zhang",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Islam Makhachev",
+                    "away_team": "Arman Tsarukyan",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Leon Edwards",
+                    "away_team": "Belal Muhammad",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Islam Makhachev",
+                    "away_team": "Charles Oliveira",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Conor McGregor",
+                    "away_team": "Michael Chandler",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Cris Cyborg",
+                    "away_team": "Kayla Harrison",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Israel Adesanya",
+                    "away_team": "Dricus Du Plessis",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Ilia Topuria",
+                    "away_team": "Max Holloway",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Islam Makhachev",
+                    "away_team": "Justin Gaethje",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Sean Strickland",
+                    "away_team": "Israel Adesanya",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Jon Jones",
+                    "away_team": "Stipe Miocic",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Jon Jones",
+                    "away_team": "Tom Aspinall",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Justin Gaethje",
+                    "away_team": "Max Holloway",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Leon Edwards",
+                    "away_team": "Khamzat Chimaev",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Sean Strickland",
+                    "away_team": "Khamzat Chimaev",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Leon Edwards",
+                    "away_team": "Shavkat Rakhmonov",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Sean O'Malley",
+                    "away_team": "Merab Dvalishvili",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Weili Zhang",
+                    "away_team": "Tatiana Suarez",
+                    "start_time": "2024-12-31T22:59:00Z",
+                    "arbitrage_opportunities": []
+                }
+            ]
+        },
+        {
+            "sport": "icehockey_nhl",
+            "games": [
+                {
+                    "home_team": "Toronto Maple Leafs",
+                    "away_team": "Detroit Red Wings",
+                    "start_time": "2024-01-15T00:38:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Buffalo Sabres",
+                    "away_team": "San Jose Sharks",
+                    "start_time": "2024-01-15T17:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Florida Panthers",
+                    "away_team": "Anaheim Ducks",
+                    "start_time": "2024-01-15T18:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Boston Bruins",
+                    "away_team": "New Jersey Devils",
+                    "start_time": "2024-01-15T18:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Columbus Blue Jackets",
+                    "away_team": "Vancouver Canucks",
+                    "start_time": "2024-01-15T18:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Pittsburgh Penguins",
+                    "away_team": "Seattle Kraken",
+                    "start_time": "2024-01-15T18:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Carolina Hurricanes",
+                    "away_team": "Los Angeles Kings",
+                    "start_time": "2024-01-15T20:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Minnesota Wild",
+                    "away_team": "New York Islanders",
+                    "start_time": "2024-01-15T23:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Vegas Golden Knights",
+                    "away_team": "Nashville Predators",
+                    "start_time": "2024-01-15T23:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Montréal Canadiens",
+                    "away_team": "Colorado Avalanche",
+                    "start_time": "2024-01-16T00:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "St Louis Blues",
+                    "away_team": "Philadelphia Flyers",
+                    "start_time": "2024-01-16T01:00:00Z",
+                    "arbitrage_opportunities": []
+                }
+            ]
+        },
+        {
+            "sport": "basketball_nba",
+            "games": [
+                {
+                    "home_team": "Denver Nuggets",
+                    "away_team": "Indiana Pacers",
+                    "start_time": "2024-01-14T20:42:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Miami Heat",
+                    "away_team": "Charlotte Hornets",
+                    "start_time": "2024-01-14T23:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Minnesota Timberwolves",
+                    "away_team": "Los Angeles Clippers",
+                    "start_time": "2024-01-15T00:10:00Z",
+                    "arbitrage_opportunities": [
+                        {
+                            "key": {
+                                "bookmaker": "PointsBet (US)",
+                                "name": "Los Angeles Clippers",
+                                "probabilities": {
+                                    "american_odds": -105,
+                                    "decimal_odds": 1.9523809523809523,
+                                    "implied_odds": 51.219513
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "LowVig.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "BetOnline.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "Bovada",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "MyBookie.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "key": {
+                                "bookmaker": "DraftKings",
+                                "name": "Los Angeles Clippers",
+                                "probabilities": {
+                                    "american_odds": -105,
+                                    "decimal_odds": 1.9523809523809523,
+                                    "implied_odds": 51.219513
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "LowVig.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "MyBookie.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "Bovada",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "BetOnline.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "key": {
+                                "bookmaker": "Caesars",
+                                "name": "Los Angeles Clippers",
+                                "probabilities": {
+                                    "american_odds": -105,
+                                    "decimal_odds": 1.9523809523809523,
+                                    "implied_odds": 51.219513
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "LowVig.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "BetOnline.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "Bovada",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "MyBookie.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "key": {
+                                "bookmaker": "FanDuel",
+                                "name": "Los Angeles Clippers",
+                                "probabilities": {
+                                    "american_odds": 102,
+                                    "decimal_odds": 2.02,
+                                    "implied_odds": 49.50495
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 2.9611588,
+                                    "book_odds": {
+                                        "bookmaker": "LowVig.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 2.9611588,
+                                    "book_odds": {
+                                        "bookmaker": "BetOnline.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 2.9611588,
+                                    "book_odds": {
+                                        "bookmaker": "MyBookie.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 2.9611588,
+                                    "book_odds": {
+                                        "bookmaker": "Bovada",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.7444687,
+                                    "book_odds": {
+                                        "bookmaker": "BetUS",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 105,
+                                            "decimal_odds": 2.05,
+                                            "implied_odds": 48.780487
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1,
+                                    "book_odds": {
+                                        "bookmaker": "Unibet",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 102,
+                                            "decimal_odds": 2.02,
+                                            "implied_odds": 49.50495
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1,
+                                    "book_odds": {
+                                        "bookmaker": "BetRivers",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 102,
+                                            "decimal_odds": 2.02,
+                                            "implied_odds": 49.50495
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "key": {
+                                "bookmaker": "SuperBook",
+                                "name": "Los Angeles Clippers",
+                                "probabilities": {
+                                    "american_odds": -105,
+                                    "decimal_odds": 1.9523809523809523,
+                                    "implied_odds": 51.219513
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "LowVig.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "BetOnline.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "Bovada",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "MyBookie.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "key": {
+                                "bookmaker": "BetMGM",
+                                "name": "Los Angeles Clippers",
+                                "probabilities": {
+                                    "american_odds": -105,
+                                    "decimal_odds": 1.9523809523809523,
+                                    "implied_odds": 51.219513
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "LowVig.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "MyBookie.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "Bovada",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.1750793,
+                                    "book_odds": {
+                                        "bookmaker": "BetOnline.ag",
+                                        "name": "Minnesota Timberwolves",
+                                        "probabilities": {
+                                            "american_odds": 110,
+                                            "decimal_odds": 2.1,
+                                            "implied_odds": 47.61905
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "home_team": "Milwaukee Bucks",
+                    "away_team": "Sacramento Kings",
+                    "start_time": "2024-01-15T00:10:00Z",
+                    "arbitrage_opportunities": [
+                        {
+                            "key": {
+                                "bookmaker": "MyBookie.ag",
+                                "name": "Milwaukee Bucks",
+                                "probabilities": {
+                                    "american_odds": -130,
+                                    "decimal_odds": 1.7692307692307692,
+                                    "implied_odds": 56.521744
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 4.4523544,
+                                    "book_odds": {
+                                        "bookmaker": "BetUS",
+                                        "name": "Sacramento Kings",
+                                        "probabilities": {
+                                            "american_odds": 155,
+                                            "decimal_odds": 2.55,
+                                            "implied_odds": 39.215687
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 4.4523544,
+                                    "book_odds": {
+                                        "bookmaker": "SuperBook",
+                                        "name": "Sacramento Kings",
+                                        "probabilities": {
+                                            "american_odds": 155,
+                                            "decimal_odds": 2.55,
+                                            "implied_odds": 39.215687
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 3.9454803,
+                                    "book_odds": {
+                                        "bookmaker": "WynnBET",
+                                        "name": "Sacramento Kings",
+                                        "probabilities": {
+                                            "american_odds": 152,
+                                            "decimal_odds": 2.52,
+                                            "implied_odds": 39.68254
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 3.6035995,
+                                    "book_odds": {
+                                        "bookmaker": "FanDuel",
+                                        "name": "Sacramento Kings",
+                                        "probabilities": {
+                                            "american_odds": 150,
+                                            "decimal_odds": 2.5,
+                                            "implied_odds": 40
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 2.3813858,
+                                    "book_odds": {
+                                        "bookmaker": "Caesars",
+                                        "name": "Sacramento Kings",
+                                        "probabilities": {
+                                            "american_odds": 143,
+                                            "decimal_odds": 2.4299999999999997,
+                                            "implied_odds": 41.152264
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.8450165,
+                                    "book_odds": {
+                                        "bookmaker": "BetMGM",
+                                        "name": "Sacramento Kings",
+                                        "probabilities": {
+                                            "american_odds": 140,
+                                            "decimal_odds": 2.4,
+                                            "implied_odds": 41.666664
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.8450165,
+                                    "book_odds": {
+                                        "bookmaker": "LowVig.ag",
+                                        "name": "Sacramento Kings",
+                                        "probabilities": {
+                                            "american_odds": 140,
+                                            "decimal_odds": 2.4,
+                                            "implied_odds": 41.666664
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 1.8450165,
+                                    "book_odds": {
+                                        "bookmaker": "BetOnline.ag",
+                                        "name": "Sacramento Kings",
+                                        "probabilities": {
+                                            "american_odds": 140,
+                                            "decimal_odds": 2.4,
+                                            "implied_odds": 41.666664
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 0.9337005,
+                                    "book_odds": {
+                                        "bookmaker": "Unibet",
+                                        "name": "Sacramento Kings",
+                                        "probabilities": {
+                                            "american_odds": 135,
+                                            "decimal_odds": 2.35,
+                                            "implied_odds": 42.553192
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 0.9337005,
+                                    "book_odds": {
+                                        "bookmaker": "Bovada",
+                                        "name": "Sacramento Kings",
+                                        "probabilities": {
+                                            "american_odds": 135,
+                                            "decimal_odds": 2.35,
+                                            "implied_odds": 42.553192
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 0.9337005,
+                                    "book_odds": {
+                                        "bookmaker": "BetRivers",
+                                        "name": "Sacramento Kings",
+                                        "probabilities": {
+                                            "american_odds": 135,
+                                            "decimal_odds": 2.35,
+                                            "implied_odds": 42.553192
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "key": {
+                                "bookmaker": "PointsBet (US)",
+                                "name": "Milwaukee Bucks",
+                                "probabilities": {
+                                    "american_odds": -150,
+                                    "decimal_odds": 1.6666666666666665,
+                                    "implied_odds": 60.000004
+                                }
+                            },
+                            "value": [
+                                {
+                                    "percent_profit": 0.7905121,
+                                    "book_odds": {
+                                        "bookmaker": "BetUS",
+                                        "name": "Sacramento Kings",
+                                        "probabilities": {
+                                            "american_odds": 155,
+                                            "decimal_odds": 2.55,
+                                            "implied_odds": 39.215687
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 0.7905121,
+                                    "book_odds": {
+                                        "bookmaker": "SuperBook",
+                                        "name": "Sacramento Kings",
+                                        "probabilities": {
+                                            "american_odds": 155,
+                                            "decimal_odds": 2.55,
+                                            "implied_odds": 39.215687
+                                        }
+                                    }
+                                },
+                                {
+                                    "percent_profit": 0.3184662,
+                                    "book_odds": {
+                                        "bookmaker": "WynnBET",
+                                        "name": "Sacramento Kings",
+                                        "probabilities": {
+                                            "american_odds": 152,
+                                            "decimal_odds": 2.52,
+                                            "implied_odds": 39.68254
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "home_team": "Portland Trail Blazers",
+                    "away_team": "Phoenix Suns",
+                    "start_time": "2024-01-15T02:10:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Philadelphia 76ers",
+                    "away_team": "Houston Rockets",
+                    "start_time": "2024-01-15T17:00:00Z",
+                    "arbitrage_opportunities": []
+                },
+                {
+                    "home_team": "Dallas Mavericks",
+                    "away_team": "New Orleans Pelicans",
+                    "start_time": "2024-01-15T18:30:00Z",
+                    "arbitrage_opportunities": []
+                }
+            ]
+        }
+    ]
+}

@@ -7,6 +7,7 @@ interface ArbitrageOpportunities {
     profit_margin: number;
     time: string;
     event: string;
+    event_sport: string | undefined;
     bets: string;
     books: string;
     odd1: string;
@@ -53,7 +54,7 @@ function ArbitrageTable ({data}:{data:ArbitrageOpportunities[]} ) {
                             </td>
                             <td>{datum.profit_margin.toFixed(2)}%</td>
                             <td>{datum.time}</td>
-                            <td>{datum.event}</td>
+                            <td><strong>{datum.event}</strong><br />{datum.event_sport}</td>
                             <td>{datum.bets} </td>
                             <td>{datum.books}</td>
                         </tr>
