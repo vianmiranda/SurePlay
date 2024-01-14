@@ -7,12 +7,15 @@ import (
 	"fmt"
 	"net/http"
 	"sync"
+	"time"
 
 	"github.com/go-chi/chi"
 )
 
 // concurrent implementation
 const port string = ":3000"
+
+const time_to_update int64 = 600 // seconds
 
 var sport_keys []string = []string{"americanfootball_ncaaf", "americanfootball_nfl", "baseball_mlb", "basketball_nba", "icehockey_nhl", "mma_mixed_martial_arts"}
 
@@ -26,7 +29,12 @@ var api_inputs oddsdata.Input = oddsdata.Input{
 func main() {
 	r := chi.NewRouter()
 
-	r.Get("/odds", handler.ArbOppsGet(findArbitrage(r, true)))
+	go func() {
+		for {
+			r.Get("/odds", handler.ArbOppsGet(findArbitrage(r, true), time_to_update))
+			time.Sleep(time.Duration(time_to_update) * time.Second)
+		}
+	}()
 	r.Post("/calc/{valueType}/{odds1}&{odds2}&{value1}", handler.BetCalcPost())
 
 	fmt.Printf("\n\nServing on %s \n\n", port)

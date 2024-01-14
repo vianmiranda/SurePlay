@@ -1,5 +1,11 @@
 package arbitrage
 
+type Response struct {
+	Response_Time int64       `json:"response_time"`
+	Next_Response int64       `json:"next_response_time"`
+	Sports        []SportOpps `json:"sports"`
+}
+
 type SportOpps struct {
 	Sport string     `json:"sport"`
 	Games []GameOpps `json:"games"`
