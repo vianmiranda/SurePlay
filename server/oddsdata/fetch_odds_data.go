@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 )
 
@@ -67,7 +68,16 @@ func fetch_key(file_name string, line int8) (string, error) {
 	var api_key string
 	var index int8 = 1
 	for scanner.Scan() {
-		if index == line {
+		if line == -1 {
+			api_key = scanner.Text()
+			remaining, err := numOfRequestsRemaining(api_key)
+			if err != nil {
+				continue
+			}
+			if remaining > 0 {
+				break
+			}
+		} else if index == line {
 			api_key = scanner.Text()
 			break
 		}
@@ -83,6 +93,25 @@ func fetch_key(file_name string, line int8) (string, error) {
 	return api_key, err
 }
 
+func numOfRequestsRemaining(api_key string) (float32, error) {
+	var URL strings.Builder
+	var err error
+
+	URL.WriteString("https://api.the-odds-api.com/v4/sports/?apiKey=")
+	URL.WriteString(api_key)
+	resp, err := http.Get(URL.String())
+	if err != nil {
+		return 0, err
+	}
+	remaining_requestsF64, err := strconv.ParseFloat(resp.Header.Get("X-Requests-Remaining"), 32)
+	if err != nil {
+		return 0, err
+	}
+	remaining_requests := float32(remaining_requestsF64)
+
+	return remaining_requests, err
+}
+
 func url_builder(settings api_params) string {
 	var sportodds strings.Builder
 	sportodds.WriteString("https://api.the-odds-api.com/v4/sports/")
@@ -96,11 +125,7 @@ func url_builder(settings api_params) string {
 	sportodds.WriteString("&oddsFormat=")
 	sportodds.WriteString(settings.ODDS_FORMAT)
 
-	// var information strings.Builder
-	// information.WriteString("https://api.the-odds-api.com/v4/sports/?apiKey=")
-	// information.WriteString(settings.API_KEY)
-
-	return sportodds.String() //, information.String()
+	return sportodds.String()
 }
 
 func get_json(URL string) (Response, error) {

@@ -21,7 +21,7 @@ var sport_keys []string = []string{"americanfootball_ncaaf", "americanfootball_n
 
 var api_inputs oddsdata.Input = oddsdata.Input{
 	API_FILE:    "api_key.txt",
-	LINE_NUMBER: 1,
+	LINE_NUMBER: -1,
 	MARKETS:     "h2h",
 	REGIONS:     "us",
 	ODDS_FORMAT: "american"}
@@ -30,8 +30,9 @@ func main() {
 	r := chi.NewRouter()
 
 	go func() {
-		for {
-			r.Get("/odds", handler.ArbOppsGet(findArbitrage(r, true), time_to_update))
+		for i := 0; ; i++ {
+			fmt.Printf("\n\nUpdating arbitrage opportunities for the %dth time\n\n", i)
+			r.Get("/odds", handler.ArbOppsGet(findArbitrage(r, false), time_to_update))
 			time.Sleep(time.Duration(time_to_update) * time.Second)
 		}
 	}()
