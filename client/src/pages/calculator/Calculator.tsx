@@ -5,8 +5,9 @@ import dice_red from '../../assets/dice_red.png.png'
 import dice_blue from '../../assets/dice_blue.png.png'
 import stake_red from '../../assets/stake_red.png.png'
 import stake_blue from '../../assets/stake_blue.png.png'
-import budget_black from '../../assets/budget.png'
+// import budget_black from '../../assets/budget.png'
 
+// JSON structure to be returned from backend. 
 interface Bets {
     value1: number
     value2: number
@@ -21,7 +22,17 @@ function americanToDecimal(odd: string) {
     return floatOdds < 0 ? ((100 / Math.abs(floatOdds)) + 1) : ((floatOdds / 100) + 1)
 }
 
-function parseURLforOdds() {
+/**
+ * Since the calculator can be accessed from the arbitrage page with prefilled
+ * odds, we need to parse the URL for the odds.
+ * 
+ * Example of a URL with prefilled odds:
+ * http://localhost:5173/calculator/?odds1=+190&odds2=-110
+ * 
+ * @returns an array of two strings, the first being the first odds and the 
+ * second being the second odds.
+ */
+function parseURLforOdds(): (string | undefined)[] {
     const searchParams = new URLSearchParams(window.location.search);
 
     var odds1 = searchParams.get('odds1')?.trim();
@@ -30,6 +41,11 @@ function parseURLforOdds() {
     return [odds1, odds2];
 }
 
+/**
+ * Main function for Calculator page.
+ * 
+ * @returns Calculator page.
+ */
 function Calculator() {
     const [odds1, setOdds1] = useState('');
     const [odds2, setOdds2] = useState('');
@@ -48,6 +64,9 @@ function Calculator() {
     const [filledLabels, setFilledLabels] = useState<number>(0);
     const [error, setError] = useState<any>('');
 
+    // If the calculator is being accessed from the arbitrage page, then we need
+    // to parse the URL for the odds and prefill them. This is optional and will
+    // still function without the odds being prefilled in the URL.
     var presetOdds : (string | undefined)[] = parseURLforOdds();
     useEffect(() => {
         if (presetOdds[0] !== undefined) {
@@ -59,8 +78,10 @@ function Calculator() {
         }
     }, []);
 
+    // Where backend is hosted.
     const URL = 'http://localhost:3000/calc/'
 
+    // Handles form submission.
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -70,12 +91,12 @@ function Calculator() {
         console.log('Stake 2:', stake2);
         console.log('Budget:', budget);
 
-        // handle invalid input
+        // Handle invalid input.
         if (stake1 == "" && stake2 == "" && budget == "") {
             console.log("Invalid input -- please enter either at least a stake or a budget")
         }
 
-        // if no budget was entered
+        // Handle if no budget was entered.
         if (budget == "") {
             if (stake1 == "" && stake2 == "") {
                 var err = "Please enter at least one stake/budget"
@@ -117,7 +138,7 @@ function Calculator() {
             }
         }
 
-        // budget was entered
+        // Handle if budget was entered.
         else {
             try {
                 const fetchURL = URL + "budget/" + americanToDecimal(odds1) + "&" + americanToDecimal(odds2) + "&" + budget
@@ -136,12 +157,14 @@ function Calculator() {
         }
     };
 
+    // Handles the counting of the number of filled labels.
     function isValidForm(original: string, value: string) {
         if (original.length > 0 && value.length == 0) return -1;
         else if (original.length == 0 && value.length > 0) return 1;
         else return 0;
     }
 
+    // Assembles the calculator with the form and the response.
     return (
         <div className="entireCalculator">
             <h1>Arbitrage Calculator</h1>

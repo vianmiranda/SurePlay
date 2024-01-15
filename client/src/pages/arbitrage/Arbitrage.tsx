@@ -4,6 +4,8 @@ import Timer from './components/Timer';
 import './Arbitrage.css';
 // import jsonData from './sample.json';
 
+// JSON structure to be returned from backend. 
+// This is the same structure as the sample.json file.
 interface Response {
     response_time: number;
     next_response_time: number;
@@ -40,11 +42,27 @@ interface Response {
     }[]
 }
 
+// Map for sport names.
+const formattedSportMap = new Map<string, string>([
+    ['mma_mixed_martial_arts', 'Mixed Martial Arts | MMA'],
+    ['basketball_nba', 'Basketball | NBA'],
+    ['americanfootball_ncaaf', 'Football | NCAAF'],
+    ['americanfootball_nfl', 'Football | NFL'],
+    ['baseball_mlb', 'Baseball | MLB'],
+    ['icehockey_nhl', 'Ice Hockey | NHL']
+]);
+
+/**
+ * Main function for Arbitrage page. Constructs the table and timer.
+ * 
+ * @returns Arbitrage page.
+ */
 function Arbitrage() {
     const [data, setData] = useState<Response | null>(null);
     const [input, setInput] = useState<ArbitrageOpportunities[]>([]);
     const [error, setError] = useState<string>('');
 
+    // Where backend is hosted.
     const URL = 'http://localhost:3000/odds';
 
     useEffect(() => {
@@ -68,19 +86,13 @@ function Arbitrage() {
 
         const interval = setInterval(() => {
             fetchData();
-            // console.log('Updating data...');
-        }, 600); // 100 calls to backend per minute
+        }, 600); // 100 calls to backend per minute.
         return () => clearInterval(interval);
     }, [data]);
-
-    let formattedSportMap = new Map<string, string>();
-    formattedSportMap.set('mma_mixed_martial_arts', 'Mixed Martial Arts | MMA');
-    formattedSportMap.set('basketball_nba', 'Basketball | NBA');
-    formattedSportMap.set('americanfootball_ncaaf', 'Football | NCAAF');
-    formattedSportMap.set('americanfootball_nfl', 'Football | NFL');
-    formattedSportMap.set('baseball_mlb', 'Baseball | MLB');
-    formattedSportMap.set('icehockey_nhl', 'Ice Hockey | NHL');
     
+    // Everytime there is a change to data, assemble the data into a format 
+    // that can be used by the table. See ArbitrageOpportunities interface in 
+    // ArbitrageTable.tsx for format.
     useEffect(() => {
         const assembleData = async () => {
             var arb: ArbitrageOpportunities[] = new Array();

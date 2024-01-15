@@ -1,5 +1,11 @@
 import { NavLink } from "react-router-dom";
 
+/**
+ * Main function for Navbar. 
+ * Proivdes navigation links to Arbitrage and Calculator pages.
+ * 
+ * @returns Navbar component.
+ */
 function Navbar() {
     return (
         <nav className="nav">

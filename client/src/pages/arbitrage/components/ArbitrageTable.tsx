@@ -2,6 +2,7 @@ import { MouseEventHandler, useCallback, useState } from "react";
 import calculator from '../../../assets/calculator.png'
 import { Link } from 'react-router-dom';
 
+// Information to be displayed in the table.
 interface ArbitrageOpportunities {
     id: number
     profit_margin: number;
@@ -14,10 +15,17 @@ interface ArbitrageOpportunities {
     odd2: string;
 }
 
+/**
+ * Generates a sortable table component provided data.
+ * 
+ * @param param0 data to be sorted.
+ * @returns sortable table component.
+ */
 function ArbitrageTable ({data}:{data:ArbitrageOpportunities[]} ) {
     const [sortColumn, setSortColumn] = useState<string>("profit_margin");
     const [descending, setDescending] = useState<boolean>(true);
 
+    // Sort the data based on the sortColumn and descending state.
     const sortedData = useCallback(
         () => sortData({data: data, sortColumn, descending: descending}),
         [data, sortColumn, descending]
@@ -65,6 +73,7 @@ function ArbitrageTable ({data}:{data:ArbitrageOpportunities[]} ) {
     );
 }
 
+// Sort the data based on the sortColumn and descending state.
 function sortData({
     data,
     sortColumn,
@@ -85,6 +94,7 @@ function sortData({
         return sortedData;
 }
 
+// Button functionality for sorting the table.
 function SortButton({
     descending,
     column,

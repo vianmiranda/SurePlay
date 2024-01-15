@@ -4,6 +4,12 @@ type Props = {
     unixTime: number;
 };
 
+/**
+ * Timer component. Returns time remaing till the next update.
+ * 
+ * @param param0 time to count down to.
+ * @returns timer component which updates every second.
+ */
 function Timer({ unixTime }: Props) {
     const [remainingTime, setRemainingTime] = useState<number>(0);
 
