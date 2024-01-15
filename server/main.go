@@ -31,7 +31,7 @@ func main() {
 
 	go func() {
 		for i := 0; ; i++ {
-			fmt.Printf("\n\nUpdating arbitrage opportunities for the %dth time\n\n", i)
+			fmt.Printf("\n-----------------------------\nArbitrage Update %d - %s\n\n", i, time.Now().Format("2006-01-02 15:04:05"))
 			r.Get("/odds", handler.ArbOppsGet(findArbitrage(r, false), time_to_update))
 			time.Sleep(time.Duration(time_to_update) * time.Second)
 		}
