@@ -7,8 +7,13 @@ import (
 	"time"
 )
 
+/*
+ArbOppsGet is the handler for GET requests to /odds. It accepts a map of arbitrage opportunities and returns a JSON object
+*/
 func ArbOppsGet(opps map[string]arbitrage.SportOpps, time_to_update int64) http.HandlerFunc {
-	result := []arbitrage.SportOpps{}
+	result := []arbitrage.SportOpps{} // initialize the return struct
+
+	// Loop through the map and append each value to the result, which is a list of SportOpps
 	for _, value := range opps {
 		result = append(result, value)
 	}
