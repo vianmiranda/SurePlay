@@ -8,7 +8,6 @@ import (
 	"io"
 	"net/http"
 	"os"
-	"path/filepath"
 	"strconv"
 	"strings"
 )
@@ -51,14 +50,7 @@ func Fetch_Odds(in Input) (Response, error) {
 }
 
 func fetch_key(file_name string, line int8) (string, error) {
-	wd, err := os.Getwd()
-	if err != nil {
-		panic(err)
-	}
-
-	parent := filepath.Dir(wd)
-	file := parent + "\\" + file_name
-	f, err := os.Open(file)
+	f, err := os.Open(file_name)
 	if err != nil {
 		return "", err
 	}

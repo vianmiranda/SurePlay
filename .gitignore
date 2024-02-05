@@ -1,3 +1,4 @@
+ec2_zip/
 api_key.txt
 __pycache__/
 *.py[cod]
