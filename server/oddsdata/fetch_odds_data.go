@@ -10,6 +10,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"time"
 )
 
 type Input struct {
@@ -130,6 +131,16 @@ func get_json(URL string) (Response, error) {
 	}
 
 	var status_code int = resp.StatusCode
+	for status_code == 429 {
+		time.Sleep(time.Second)
+		fmt.Printf("Got %d, trying again", status_code)
+		resp, err = http.Get(URL)
+		if err != nil {
+			return data, err
+		}
+		status_code = resp.StatusCode
+	}
+
 	fmt.Printf("Status code: [%d]\n", status_code)
 	fmt.Println(resp.Header)
 	fmt.Println()

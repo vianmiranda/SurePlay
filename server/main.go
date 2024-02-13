@@ -12,7 +12,7 @@ import (
 	"github.com/go-chi/chi"
 )
 
-const port string = ":3000"
+const port string = ":80"
 
 const time_to_update int64 = 600 // seconds
 
