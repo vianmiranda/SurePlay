@@ -12,17 +12,24 @@ import (
 	"github.com/go-chi/chi"
 )
 
-const port string = ":80"
+const port string = ":3000"
 
 const time_to_update int64 = 600 // seconds
 
 // Sport keys associated with the Odds API
-var sport_keys []string = []string{"americanfootball_ncaaf", "americanfootball_nfl", "baseball_mlb", "basketball_nba", "icehockey_nhl", "mma_mixed_martial_arts"}
+var sport_keys []string = []string{
+	"americanfootball_ncaaf",
+	"americanfootball_nfl",
+	"baseball_mlb",
+	"basketball_nba",
+	"icehockey_nhl",
+	"mma_mixed_martial_arts"}
 
 // Input to the Odds API
 var api_inputs oddsdata.Input = oddsdata.Input{
 	API_FILE:    "api_key.txt",
 	LINE_NUMBER: -1,
+	BACKUPS:     1,
 	MARKETS:     "h2h",
 	REGIONS:     "us",
 	ODDS_FORMAT: "american"}
