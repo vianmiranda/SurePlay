@@ -39,7 +39,7 @@ func game_arbitrages(game oddsdata.Game) bookmaker_ArbOpp {
 
 	// Takes minimum odds from t1pq and finds all odds from t2pq that sum less than 100
 	var arbitrage_opps bookmaker_ArbOpp = make(bookmaker_ArbOpp)
-	for len(t2pq) > 0 {
+	for len(t2pq) > 0 && len(t1pq) > 0 {
 		t1_bookodd := *heap.Pop(&t1pq).(*Book_Odds)
 		var temp_splice []Book_Profit_Margin
 		var temp_pq MinHeap
