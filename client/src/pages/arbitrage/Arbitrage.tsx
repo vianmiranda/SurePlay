@@ -84,9 +84,22 @@ function Arbitrage() {
             }
         };
 
+        function nextInterval() {  
+            if (data === null) {
+                return 600;
+            } 
+
+            const nextUpdate = ((data.response_time + data.next_response_time) - Math.floor(Date.now()/1000)) * 1000; // in milliseconds
+            if (nextUpdate < 6000) {
+                return 600;
+            } else {
+                return nextUpdate - 3000;
+            }
+        }
+
         const interval = setInterval(() => {
             fetchData();
-        }, 600); // 100 calls to backend per minute.
+        }, nextInterval());
         return () => clearInterval(interval);
     }, [data]);
     
