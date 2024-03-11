@@ -6,13 +6,18 @@ import (
 	"engine/oddsdata"
 	"fmt"
 	"net/http"
+	"os"
+	"strconv"
 	"sync"
 	"time"
 
 	"github.com/go-chi/chi"
+	"github.com/joho/godotenv"
 )
 
-const port string = ":3000"
+var env_err error = godotenv.Load("../env/.env")
+
+var port string = os.Getenv("PORT")
 
 const time_to_update int64 = 600 // seconds
 
@@ -27,12 +32,12 @@ var sport_keys []string = []string{
 
 // Input to the Odds API
 var api_inputs oddsdata.Input = oddsdata.Input{
-	API_FILE:    "api_key.txt",
-	LINE_NUMBER: -1,
-	BACKUPS:     1,
-	MARKETS:     "h2h",
-	REGIONS:     "us",
-	ODDS_FORMAT: "american"}
+	API_FILE:    os.Getenv("API_FILE"),
+	LINE_NUMBER: stringToInt(os.Getenv("API_LINE_NUMBER")),
+	BACKUPS:     stringToInt(os.Getenv("API_BACKUPS")),
+	MARKETS:     os.Getenv("API_MARKETS"),
+	REGIONS:     os.Getenv("API_REGIONS"),
+	ODDS_FORMAT: os.Getenv("API_ODDS_FORMAT")}
 
 /*
 The Go backend is responsible for handling a GET request to /odds, which will return a JSON object containing all arbitrage opportunities for each sport.
@@ -40,6 +45,10 @@ It is also responsible for handling POST requests to /calc, which will return a 
 other information useful to the client (such as the expected value of the bet, the profit, etc.)
 */
 func main() {
+	if env_err != nil {
+		panic(env_err)
+	}
+
 	r := chi.NewRouter()
 
 	// The /odds GET request is wrapped in a goroutine that contains an infinite loop so that the arbitrage opportunities are updated every time_to_update seconds
@@ -104,4 +113,12 @@ func getResponse(wg *sync.WaitGroup, in oddsdata.Input, dict map[string]arbitrag
 
 	// Add the arbitrage opportunities to the map - no need to lock because each goroutine is responsible for a different sport
 	dict[in.SPORT] = arbOpps
+}
+
+func stringToInt(s string) int8 {
+	i, err := strconv.ParseInt(s, 10, 8)
+	if err != nil {
+		panic(err)
+	}
+	return int8(i)
 }

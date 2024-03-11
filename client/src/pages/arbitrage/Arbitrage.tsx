@@ -63,7 +63,7 @@ function Arbitrage() {
     const [error, setError] = useState<string>('');
 
     // Where backend is hosted.
-    const URL = 'http://localhost:3000/odds';
+    const URL = import.meta.env.VITE_ODDS_URL || 'http://localhost:3000/odds';
 
     useEffect(() => {
         const fetchData = async () => {
@@ -86,7 +86,7 @@ function Arbitrage() {
 
         function nextInterval() {  
             if (data === null) {
-                return 600;
+                return 100;
             } 
 
             const nextUpdate = ((data.response_time + data.next_response_time) - Math.floor(Date.now()/1000)) * 1000; // in milliseconds

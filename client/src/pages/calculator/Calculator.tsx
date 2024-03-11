@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './calculator.css'
+import './Calculator.css'
 
 import dice_red from '../../assets/dice_red.png.png'
 import dice_blue from '../../assets/dice_blue.png.png'
@@ -79,7 +79,7 @@ function Calculator() {
     }, []);
 
     // Where backend is hosted.
-    const URL = 'http://localhost:3000/calc/'
+    const URL = import.meta.env.VITE_CALC_URL || 'http://localhost:3000/calc/'
 
     // Handles form submission.
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
