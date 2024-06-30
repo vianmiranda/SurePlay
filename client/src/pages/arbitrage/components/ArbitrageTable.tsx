@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 interface ArbitrageOpportunities {
     id: number
     profit_margin: number;
-    time: string;
+    time: number;
     event: string;
     event_sport: string | undefined;
     bets: string;
@@ -61,7 +61,7 @@ function ArbitrageTable ({data}:{data:ArbitrageOpportunities[]} ) {
                                 </Link>
                             </td>
                             <td>{datum.profit_margin.toFixed(2)}%</td>
-                            <td>{datum.time}</td>
+                            <td>{new Date(datum.time).toLocaleString()}</td>
                             <td><strong>{datum.event}</strong><br />{datum.event_sport}</td>
                             <td>{datum.bets} </td>
                             <td>{datum.books}</td>

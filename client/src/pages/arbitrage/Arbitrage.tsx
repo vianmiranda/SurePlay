@@ -131,7 +131,7 @@ function Arbitrage() {
                                 arb.push({
                                     id: i,
                                     profit_margin: value.percent_profit,
-                                    time: new Date(Date.parse(game.start_time)).toLocaleString(),
+                                    time: Date.parse(game.start_time),
                                     event: game.away_team + ' @ ' + game.home_team,
                                     event_sport: formattedSportMap.get(datum.sport),
                                     bets: opportunity.key.name + '\r\n' + value.book_odds.name,
