@@ -3,12 +3,11 @@ RUN mkdir -p /home/client
 RUN mkdir -p /home/env
 WORKDIR /home
 COPY ./env/.env ./env/.env
-#--
-# caching (if changes to ./client but not package*)
+# -- caching (if changes to ./client but not package*)
 COPY ./client/package*.json ./client
 WORKDIR /home/client
 RUN npm install
-#--
+# --
 COPY ./client .
 RUN npm run build
 
