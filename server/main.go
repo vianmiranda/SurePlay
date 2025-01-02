@@ -17,7 +17,7 @@ import (
 
 var env_err error = godotenv.Load("../env/.env")
 
-var port string = os.Getenv("PORT")
+var port string = fmt.Sprintf(":%s", os.Getenv("PORT"))
 
 const time_to_update int64 = 600 // seconds
 
