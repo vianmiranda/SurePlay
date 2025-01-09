@@ -1,3 +1,4 @@
+# Context of this Dockerfile is the parent directory
 FROM node:23-alpine AS build
 RUN mkdir -p /home/client
 RUN mkdir -p /home/env
