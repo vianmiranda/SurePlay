@@ -15,11 +15,11 @@ import (
 	"github.com/joho/godotenv"
 )
 
-var env_err error = godotenv.Load("../env/.env")
-
-var port string = fmt.Sprintf(":%s", os.Getenv("PORT"))
+const port string = ":8081"
 
 const time_to_update int64 = 600 // seconds
+
+var env_err error = godotenv.Load("../env/.env")
 
 // Sport keys associated with the Odds API
 var sport_keys []string = []string{
