@@ -1,27 +1,28 @@
-services: 
+# Uses nginxproxy/nginx-proxy for reverse proxy. Configured on VPS.
+services:
     client:
-        build:
-            context: ./
-            dockerfile: client/Dockerfile
-        ports:
-            - 8080:8080
+        image: ghcr.io/vianmiranda/sureplay-client:latest
         restart: always
-    nginx:
-        depends_on:
-            - client
-            - server
-        build:
-            context: ./nginx
-            dockerfile: Dockerfile
-        ports:
-            - 80:80
-        restart: always
+        environment:
+            VIRTUAL_HOST: ${SUREPLAY_HOST}
+            LETSENCRYPT_HOST: ${SUREPLAY_HOST}
+            VIRTUAL_PORT: 8080
+            VIRTUAL_PATH: /
+        networks:
+            - nginx_host
     server:
-        build:
-            context: ./server
-            dockerfile: Dockerfile
+        image: ghcr.io/vianmiranda/sureplay-server:latest
         volumes:
             - ./env:/home/env:ro
-        ports:
-            - 3000:3000
         restart: always
+        environment:
+            VIRTUAL_HOST: ${SUREPLAY_HOST}
+            LETSENCRYPT_HOST: ${SUREPLAY_HOST}
+            VIRTUAL_PORT: 8081
+            VIRTUAL_PATH: ~*^/(odds|calc)
+        networks:
+            - nginx_host
+networks:
+    nginx_host:
+        name: ${DOCKER_NETWORK}
+        external: true
