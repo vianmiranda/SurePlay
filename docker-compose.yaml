@@ -1,0 +1,28 @@
+# Uses nginxproxy/nginx-proxy for reverse proxy. Configured on VPS.
+services:
+    client:
+        image: ghcr.io/vianmiranda/sureplay-client:latest
+        restart: always
+        environment:
+            VIRTUAL_HOST: ${SUREPLAY_HOST}
+            LETSENCRYPT_HOST: ${SUREPLAY_HOST}
+            VIRTUAL_PORT: 8080
+            VIRTUAL_PATH: ~* ^/(|arbitrage|calculator)
+        networks:
+            - nginx_host
+    server:
+        image: ghcr.io/vianmiranda/sureplay-server:latest
+        volumes:
+            - ./env:/home/env:ro
+        restart: always
+        environment:
+            VIRTUAL_HOST: ${SUREPLAY_HOST}
+            LETSENCRYPT_HOST: ${SUREPLAY_HOST}
+            VIRTUAL_PORT: 8081
+            VIRTUAL_PATH: ~* ^/(odds|calc/.*)$
+        networks:
+            - nginx_host
+networks:
+    nginx_host:
+        name: ${DOCKER_NETWORK}
+        external: true
